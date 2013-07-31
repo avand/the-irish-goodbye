@@ -15,10 +15,49 @@
         color: #EDEBE8;
       }
       body {
-        font: 18px "Podkova", serif;
-        box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.75);
+        font: 18px/26px "Podkova", serif;
         background: black;
         margin: 0;
+        box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.8);
+      }
+      .backstretch img {
+        -webkit-animation-name: gaussian-blur;
+        -webkit-animation-duration: 900ms;
+        -webkit-animation-fill-mode: forwards;
+      }
+      @-webkit-keyframes gaussian-blur {
+        from {
+          -webkit-filter: blur(0px);
+        }
+        to {
+          -webkit-filter: blur(65px);
+        }
+      }
+      #about {
+        position: fixed;
+        width: 44%;
+        margin: 190px 25%;
+        padding: .75em 3%;
+        color: transparent;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-name: about;
+        -webkit-animation-duration: 1100ms;
+        -webkit-animation-delay: 900ms;
+        -webkit-animation-fill-mode: forwards;
+      }
+      @-webkit-keyframes about {
+        0% {
+          color: rgba(237, 235, 232, 0.1);
+          text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        90% {
+          text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+        }
+        100% {
+          margin-top: 198px;
+          color: rgba(237, 235, 232, 1.0);
+          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+        }
       }
       a {
         border-bottom: 1px solid rgba(237, 235, 232, 0.5);
@@ -68,6 +107,18 @@
   </head>
   <body>
     <h1>The Irish Goodbye</h1>
+
+    <div id="about">
+      <p>We believe in souls. And we believe in soul mates. Our photos aim to capture people at their best and their worst - when then there's nothing left to be said and it's all out on the table. Our perfect shot isn't about lighting or poses. It's all about you. And we want to get to know you so that we can capture moments you'll cherish forever. </p>
+
+      <p>When we shoot your event, you'll receive ~300 shots in high resolution, minimally retouched. We'll also leave you with a package of ~30 unique prints. And we may use some of our favorite shots for our website.</p>
+
+      <p>Our signature is candid photos that capture emotion - not poses. We'll snap shots of the wedding party, family, and friends as situations present themselves. We don't like to arrange situations.</p>
+
+      <p>The Irish Goodbye was created by Nazir Agah and Avand Amiri. ...</p>
+
+      <p>Nothing about us is standard, except for the standard that we set. Boom.</p>
+    </div>
 
     <nav>
       <a href="mailto:hello@irishgoodbyesf.com">Contact</a>
