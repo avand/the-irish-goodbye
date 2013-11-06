@@ -10,7 +10,9 @@ body {
   background: black;
   margin: 0;
   box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.8);
+  padding: 19px 21px;
 }
+
 .backstretch img.blur {
   -webkit-animation-name: add-gaussian-blur;
   -webkit-animation-duration: 900ms;
@@ -154,16 +156,6 @@ body {
 }
 
 
-h1, nav {
-  position: fixed;
-  top: 19px;
-}
-h1 {
-  left: 21px;
-}
-nav {
-  right: 21px;
-}
 h1 {
   background-image: url(../images/the-irish-goodbye.svg);
   background-size: 100% 100%;
@@ -172,6 +164,11 @@ h1 {
   height: 160px;
   text-indent: -9999px;
   margin: 0;
+  float: left;
+}
+nav {
+  text-align: right;
+  margin-left: 240px;
 }
 #about {
   padding: 128px 274px;
