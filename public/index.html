@@ -6,72 +6,49 @@
     <link href="http://fonts.googleapis.com/css?family=Podkova" rel="stylesheet" type="text/css">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
-    <style>
-      body, html {
-        height: 100%;
-      }
-      body,
-      a, a:link, a:visited, a:hover {
-        color: #EDEBE8;
-      }
-      body {
-        font: 18px "Podkova", serif;
-        box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.75);
-        background: black;
-        margin: 0;
-      }
-      a {
-        border-bottom: 1px solid rgba(237, 235, 232, 0.5);
-        text-decoration: none;
-      }
-      a:hover {
-        border-bottom: 1px solid rgba(237, 235, 232, 1.0);
-      }
-      h1, nav {
-        position: fixed;
-        top: 19px;
-      }
-      h1 {
-        left: 21px;
-      }
-      nav {
-        right: 21px;
-      }
-      h1 {
-        background-image: url(images/the-irish-goodbye.svg);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        width: 240px;
-        height: 160px;
-        text-indent: -9999px;
-        margin: 0;
-      }
-      @media only screen
-      and (min-device-width : 320px)
-      and (max-device-width : 480px) {
-        body {
-          box-shadow: inset 0 0 45px 10px rgba(0, 0, 0, 0.75);
-        }
-        h1, nav {
-          top: 9px;
-        }
-        h1 {
-          width: 125px;
-          height: 87px;
-          left: 11px;
-        }
-        nav {
-          right: 11px;
-        }
-      }
-    </style>
+    <link href="stylesheets/screen.css" type="text/css"
+      rel="stylesheet"
+      media="all">
   </head>
   <body>
     <h1>The Irish Goodbye</h1>
 
     <nav>
-      <a href="mailto:hello@irishgoodbyesf.com">Contact</a>
+      <a href="/about" class="btn">About</a>
     </nav>
+
+    <div id="about">
+      <p>
+        We believe in souls. We believe in soul mates. Our photos
+        aim to capture people at their best and their worst -
+        when there&rsquo;s nothing left to be said and it's all out on
+        the table. Our perfect shot is not about lighting. It&rsquo;s
+        not about poses. It&rsquo;s about you. We want to get to know
+        you so that we can capture the moments you&rsquo;ll cherish
+        forever.
+      </p>
+
+      <p>
+        When we shoot your event, you&rsquo;ll receive about 300 high
+        resolution photographs, minimally retouched. We&rsquo;ll also
+        leave you with a package of roughly 30 unique prints.
+        We may use some of our favorite shots for our website,
+        with your permission of course.
+      </p>
+
+      <p>
+        Our signature photo captures the emotion and the spirit of
+        your event.
+      </p>
+
+      <p>
+        Stay out of the deep end,<br>
+        <a href="http://naziragah.com">Nazir Agah</a> &amp;
+        <a href="http://avandamiri.com">Avand Amiri</a>
+      </p>
+
+      <!--p>Nothing about us is standard, except for the standard that we set.</p-->
+    </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
@@ -115,6 +92,26 @@
         event.gesture.preventDefault()
         $.backstretch("prev");
       });
+
+      $("a[href='/about']").click(function(e) {
+        e.preventDefault();
+
+        var aboutLink = $(this);
+        var about = $("#about");
+
+        if (aboutLink.text() === "About") {
+          $(".backstretch img").addClass("blur");
+          about.addClass("in").removeClass("out")
+          $(this).text("Close");
+          $.backstretch("pause");
+        } else {
+          $(".backstretch img").removeClass("blur").addClass("focus");
+          about.addClass("out").removeClass("in");
+          $(this).text("About");
+          $.backstretch("prev");
+          $.backstretch("resume");
+        }
+      })
     </script>
   </body>
 </html>

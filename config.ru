@@ -1,6 +1,9 @@
 require "rack/rewrite"
 
-use Rack::Static, :urls => ["/images"], :root => "public"
+use Rack::Static, :root => "public", :urls => [
+  "/images",
+  "/stylesheets"
+]
 
 use Rack::Rewrite do
   r301 "/tim-wendy", "https://www.dropbox.com/sh/b36q4s2ss94dc5s/SGtx8oeMv2"
