@@ -1,7 +1,17 @@
-body, html {
+html, body {
   height: 100%;
-  color: #EDEBE8;
 }
+body {
+  color: #EDEBE8;
+  font: 18px/1.4em "Podkova", serif;
+  background: black;
+  margin: 0;
+  box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.8);
+  padding: 19px 21px 0;
+  box-sizing: border-box;
+}
+
+
 a, a:link, a:visited {
   color: rgba(189, 246, 196, 1.0);
   text-decoration: none;
@@ -25,14 +35,6 @@ a:hover, a:focus, a:active {
 }
 .btn:hover, .btn:focus, .btn:active {
   background-position: 0 100%;
-}
-
-body {
-  font: 18px/1.4em "Podkova", serif;
-  background: black;
-  margin: 0;
-  box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.8);
-  padding: 19px 21px;
 }
 
 .backstretch img.blur {
