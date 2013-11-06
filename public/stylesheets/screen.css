@@ -24,7 +24,6 @@ body {
   -webkit-animation-fill-mode: forwards;
 }
 
-
 @-webkit-keyframes add-gaussian-blur {
   from {
     -webkit-filter: blur(0px);
@@ -41,93 +40,6 @@ body {
     -webkit-filter: blur(0px);
   }
 }
-@-webkit-keyframes add-gaussian-blur {
-  from {
-    -webkit-filter: blur(0px);
-  }
-  to {
-    -webkit-filter: blur(65px);
-  }
-}
-@-webkit-keyframes remove-gaussian-blur {
-  from {
-    -webkit-filter: blur(65px);
-  }
-  to {
-    -webkit-filter: blur(0px);
-  }
-}
-@-webkit-keyframes about-in {
-  0% {
-    top: 48%;
-    color: rgba(237, 235, 232, 0.1);
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  90% {
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    top: 50%;
-    color: rgba(237, 235, 232, 1.0);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.3);
-  }
-}
-@-webkit-keyframes about-out {
-  0% {
-    top: 50%;
-    color: rgba(237, 235, 232, 1.0);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    top: 47.5%;
-    color: rgba(237, 235, 232, 0.0);
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-}
-@-webkit-keyframes add-gaussian-blur {
-  from {
-    -webkit-filter: blur(0px);
-  }
-  to {
-    -webkit-filter: blur(65px);
-  }
-}
-@-webkit-keyframes remove-gaussian-blur {
-  from {
-    -webkit-filter: blur(65px);
-  }
-  to {
-    -webkit-filter: blur(0px);
-  }
-}
-@-webkit-keyframes about-in {
-  0% {
-    top: 48%;
-    color: rgba(237, 235, 232, 0.1);
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  90% {
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    top: 50%;
-    color: rgba(237, 235, 232, 1.0);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.3);
-  }
-}
-@-webkit-keyframes about-out {
-  0% {
-    top: 50%;
-    color: rgba(237, 235, 232, 1.0);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    top: 47.5%;
-    color: rgba(237, 235, 232, 0.0);
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-}
-
 
 h1 {
   background-image: url(../images/the-irish-goodbye.svg);
@@ -143,7 +55,6 @@ nav {
   text-align: right;
   margin-left: 240px;
 }
-
 
 #about {
   margin: 102px 274px 0;
@@ -195,7 +106,6 @@ nav {
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 }
-
 
 
 
