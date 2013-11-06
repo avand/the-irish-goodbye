@@ -78,7 +78,7 @@ nav {
 #about.out {
   -webkit-animation-timing-function: ease-out;
   -webkit-animation-name: about-out;
-  -webkit-animation-duration: 700ms;
+  -webkit-animation-duration: 600ms;
   -webkit-animation-fill-mode: forwards;
 }
 
