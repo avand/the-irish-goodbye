@@ -146,6 +146,9 @@ and (max-width: 480px) {
     width: 125px;
     height: 87px;
   }
+  nav {
+    margin-left: 125px;
+  }
   #about {
     margin: 18px 0 0;
   }
