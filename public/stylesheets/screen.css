@@ -1,14 +1,46 @@
-html, body {
-  height: 100%;
-}
 body {
   color: #EDEBE8;
   font: 18px/1.4em "Podkova", serif;
   background: black;
   margin: 0;
-  box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.8);
   padding: 19px 21px 0;
   box-sizing: border-box;
+}
+
+header {
+  overflow: auto;
+}
+
+#vignette {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+
+.backstretch img {
+}
+.backstretch img.blur {
+  -webkit-animation-name: add-gaussian-blur;
+  -webkit-animation-duration: 900ms;
+  -webkit-animation-fill-mode: forwards;
+}
+.backstretch img.focus {
+  -webkit-animation-name: remove-gaussian-blur;
+  -webkit-animation-duration: 900ms;
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes add-gaussian-blur {
+  from { -webkit-filter: blur(0px);  }
+  to   { -webkit-filter: blur(65px); }
+}
+@-webkit-keyframes remove-gaussian-blur {
+  from { -webkit-filter: blur(65px); }
+  to   { -webkit-filter: blur(0px);  }
 }
 
 
@@ -37,33 +69,6 @@ a:hover, a:focus, a:active {
   background-position: 0 100%;
 }
 
-.backstretch img.blur {
-  -webkit-animation-name: add-gaussian-blur;
-  -webkit-animation-duration: 900ms;
-  -webkit-animation-fill-mode: forwards;
-}
-.backstretch img.focus {
-  -webkit-animation-name: remove-gaussian-blur;
-  -webkit-animation-duration: 900ms;
-  -webkit-animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes add-gaussian-blur {
-  from {
-    -webkit-filter: blur(0px);
-  }
-  to {
-    -webkit-filter: blur(65px);
-  }
-}
-@-webkit-keyframes remove-gaussian-blur {
-  from {
-    -webkit-filter: blur(65px);
-  }
-  to {
-    -webkit-filter: blur(0px);
-  }
-}
 
 h1 {
   background-image: url(../images/the-irish-goodbye.svg);
@@ -85,7 +90,7 @@ nav .btn {
 
 
 #about {
-  margin: 102px 274px 0;
+  margin: -52px 274px 0;
   max-width: 640px;
   display: none;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.3);
@@ -123,7 +128,7 @@ and (min-width: 1162px) {
 @media only screen
 and (max-width: 980px) {
   #about {
-    margin: 152px 32px 0;
+    margin: 36px 32px 0;
     max-width: inherit;
   }
 }
@@ -132,14 +137,16 @@ and (max-width: 980px) {
 and (min-width: 320px)
 and (max-width: 480px) {
   body {
-    box-shadow: inset 0 0 45px 10px rgba(0, 0, 0, 0.75);
     padding: 23px 27px;
+  }
+  #vignette {
+    box-shadow: inset 0 0 45px 10px rgba(0, 0, 0, 0.75);
   }
   h1 {
     width: 125px;
     height: 87px;
   }
   #about {
-    margin: 78px 0 0;
+    margin: 18px 0 0;
   }
 }
