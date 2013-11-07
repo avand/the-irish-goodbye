@@ -53,47 +53,46 @@
     </section>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
 
     <script>
-      $.backstretch([
-        "images/wending/m-s-hay-babe.jpg",
-        "images/wending/hay-baby.jpg",
-        "images/wending/don-the-vail.jpg",
-        "images/wending/forever-is-now.jpg",
-        "images/wending/laugh-from-the-heart.jpg",
-        "images/wending/ha-babe.jpg",
-        "images/wending/kiss-and-breathe.jpg",
-        "images/wending/my-number-one.jpg",
-        "images/wending/lens-flare.jpg",
-        "images/wending/uphill-from-here.jpg",
-        "images/wending/love-you-mom.jpg",
-        "images/wending/wendy-and-mom.jpg",
-        "images/wending/sunny-vail.jpg",
-        "images/wending/canopei.jpg",
-        "images/wending/picture-in-picture.jpg",
-        "images/wending/crystal-clearing.jpg",
-        "images/wending/triangle-of-tweed.jpg",
-        "images/wending/hay-you.jpg",
-        "images/wending/look-at-the-camera.jpg",
-        "images/wending/pei-pie.jpg",
-        "images/wending/fedora.jpg",
-        "images/wending/cupcakes.jpg",
-        "images/wending/hay-babes.jpg"
-      ], {
-        duration: 6000,
-        fade: 760
-      });
+      // $.backstretch([
+      //   "images/wending/m-s-hay-babe.jpg",
+      //   "images/wending/hay-baby.jpg",
+      //   "images/wending/don-the-vail.jpg",
+      //   "images/wending/forever-is-now.jpg",
+      //   "images/wending/laugh-from-the-heart.jpg",
+      //   "images/wending/ha-babe.jpg",
+      //   "images/wending/kiss-and-breathe.jpg",
+      //   "images/wending/my-number-one.jpg",
+      //   "images/wending/lens-flare.jpg",
+      //   "images/wending/uphill-from-here.jpg",
+      //   "images/wending/love-you-mom.jpg",
+      //   "images/wending/wendy-and-mom.jpg",
+      //   "images/wending/sunny-vail.jpg",
+      //   "images/wending/canopei.jpg",
+      //   "images/wending/picture-in-picture.jpg",
+      //   "images/wending/crystal-clearing.jpg",
+      //   "images/wending/triangle-of-tweed.jpg",
+      //   "images/wending/hay-you.jpg",
+      //   "images/wending/look-at-the-camera.jpg",
+      //   "images/wending/pei-pie.jpg",
+      //   "images/wending/fedora.jpg",
+      //   "images/wending/cupcakes.jpg",
+      //   "images/wending/hay-babes.jpg"
+      // ], {
+      //   duration: 6000,
+      //   fade: 760
+      // });
 
-      var body = document.getElementsByTagName("body")[0]
-      Hammer(body).on("swipeleft", function(event) {
-        event.gesture.preventDefault()
-        $.backstretch("next");
-      }).on("swiperight", function(event) {
-        event.gesture.preventDefault()
-        $.backstretch("prev");
-      });
+      // var body = document.getElementsByTagName("body")[0]
+      // Hammer(body).on("swipeleft", function(event) {
+      //   event.gesture.preventDefault()
+      //   $.backstretch("next");
+      // }).on("swiperight", function(event) {
+      //   event.gesture.preventDefault()
+      //   $.backstretch("prev");
+      // });
 
       $("a[href='/about']").click(function(e) {
         e.preventDefault();
@@ -102,16 +101,16 @@
         var about = $("#about");
 
         if (aboutLink.text() === "About") {
-          $(".backstretch img").addClass("blur");
+          // $(".backstretch img").addClass("blur");
           about.addClass("in").removeClass("out")
           $(this).text("Close");
-          $.backstretch("pause");
+          // $.backstretch("pause");
         } else {
-          $(".backstretch img").removeClass("blur").addClass("focus");
+          // $(".backstretch img").removeClass("blur").addClass("focus");
           about.addClass("out").removeClass("in");
           $(this).text("About");
-          $.backstretch("prev");
-          $.backstretch("resume");
+          // $.backstretch("prev");
+          // $.backstretch("resume");
         }
       })
     </script>
