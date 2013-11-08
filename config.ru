@@ -5,7 +5,8 @@ use Rack::Static, {
   :header_rules => [["/images", { "Cache-Control" => "public, 31536000"}]],
   :urls         => [
     "/images",
-    "/stylesheets"
+    "/stylesheets",
+    "/javascripts"
   ]
 }
 
