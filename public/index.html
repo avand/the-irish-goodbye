@@ -6,116 +6,133 @@
     <link href="http://fonts.googleapis.com/css?family=Podkova" rel="stylesheet" type="text/css">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="stylesheets/screen.css" type="text/css"
-      rel="stylesheet"
-      media="all">
+    <link href="stylesheets/screen.css" type="text/css" rel="stylesheet" media="all">
   </head>
   <body>
-    <header>
-      <h1>The Irish Goodbye</h1>
+    <section>
+      <header>
+        <h1>The Irish Goodbye</h1>
 
-      <nav>
-        <a href="/about" class="btn">About</a>
-      </nav>
-    </header>
+        <nav>
+          <a href="/about" class="btn" id="about-btn">About</a>
+        </nav>
+      </header>
 
-    <section id="about">
-      <p>
-        We believe in souls. We believe in soul mates. Our photos
-        aim to capture people at their best and their worst -
-        when there&rsquo;s nothing left to be said and it's all out on
-        the table. Our perfect shot is not about lighting. It&rsquo;s
-        not about poses. It&rsquo;s about you. We want to get to know
-        you so that we can capture the moments you&rsquo;ll cherish
-        forever.
-      </p>
+      <article id="about">
+        <p>
+          We believe in souls. We believe in soul mates. Our photos
+          aim to capture people at their best and their worst -
+          when there&rsquo;s nothing left to be said and it's all out on
+          the table. Our perfect shot is not about lighting. It&rsquo;s
+          not about poses. It&rsquo;s about you. We want to get to know
+          you so that we can capture the moments you&rsquo;ll cherish
+          forever.
+        </p>
 
-      <p>
-        When we shoot your event, you&rsquo;ll receive about 300 high
-        resolution photographs, minimally retouched. We&rsquo;ll also
-        leave you with a package of roughly 30 unique prints.
-        We may use some of our favorite shots for our website,
-        with your permission of course.
-      </p>
+        <p>
+          When we shoot your event, you&rsquo;ll receive about 300 high
+          resolution photographs, minimally retouched. We&rsquo;ll also
+          leave you with a package of roughly 30 unique prints.
+          We may use some of our favorite shots for our website,
+          with your permission of course.
+        </p>
 
-      <p>
-        Our signature photo captures the emotion and the spirit of
-        your event.
-      </p>
+        <p>
+          Our signature photo captures the emotion and the spirit of
+          your event.
+        </p>
 
-      <p>
-        Stay out of the deep end,<br>
-        <a href="http://naziragah.com">Nazir Agah</a> &amp;
-        <a href="http://avandamiri.com">Avand Amiri</a>
-      </p>
+        <p>
+          Stay out of the deep end,<br>
+          <a href="http://naziragah.com">Nazir Agah</a> &amp;
+          <a href="http://avandamiri.com">Avand Amiri</a>
+        </p>
 
-      <!--p>Nothing about us is standard, except for the standard that we set.</p-->
+        <!--p>Nothing about us is standard, except for the standard that we set.</p-->
+      </article>
     </section>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
+    <div id="slideshow-container" class="bleed">
+      <div id="slideshow">
+        <div id="slide-1" class="slide slide-current"></div>
+        <div id="slide-2" class="slide slide-next"></div>
+        <div id="slide-3" class="slide"></div>
+        <div id="slide-4" class="slide"></div>
+        <div id="slide-5" class="slide"></div>
+        <div id="slide-6" class="slide"></div>
+        <div id="slide-7" class="slide"></div>
+        <div id="slide-8" class="slide"></div>
+        <div id="slide-9" class="slide"></div>
+        <div id="slide-10" class="slide"></div>
+        <div id="slide-11" class="slide"></div>
+        <div id="slide-12" class="slide"></div>
+        <div id="slide-13" class="slide"></div>
+        <div id="slide-14" class="slide"></div>
+        <div id="slide-15" class="slide"></div>
+        <div id="slide-16" class="slide"></div>
+        <div id="slide-17" class="slide"></div>
+        <div id="slide-18" class="slide"></div>
+        <div id="slide-19" class="slide"></div>
+        <div id="slide-21" class="slide"></div>
+        <div id="slide-22" class="slide"></div>
+        <div id="slide-23" class="slide"></div>
+        <div id="slide-24" class="slide"></div>
+      </div>
+    </div>
+    <div id="vignette" class="bleed"></div>
 
-    <script>
-      // $.backstretch([
-      //   "images/wending/m-s-hay-babe.jpg",
-      //   "images/wending/hay-baby.jpg",
-      //   "images/wending/don-the-vail.jpg",
-      //   "images/wending/forever-is-now.jpg",
-      //   "images/wending/laugh-from-the-heart.jpg",
-      //   "images/wending/ha-babe.jpg",
-      //   "images/wending/kiss-and-breathe.jpg",
-      //   "images/wending/my-number-one.jpg",
-      //   "images/wending/lens-flare.jpg",
-      //   "images/wending/uphill-from-here.jpg",
-      //   "images/wending/love-you-mom.jpg",
-      //   "images/wending/wendy-and-mom.jpg",
-      //   "images/wending/sunny-vail.jpg",
-      //   "images/wending/canopei.jpg",
-      //   "images/wending/picture-in-picture.jpg",
-      //   "images/wending/crystal-clearing.jpg",
-      //   "images/wending/triangle-of-tweed.jpg",
-      //   "images/wending/hay-you.jpg",
-      //   "images/wending/look-at-the-camera.jpg",
-      //   "images/wending/pei-pie.jpg",
-      //   "images/wending/fedora.jpg",
-      //   "images/wending/cupcakes.jpg",
-      //   "images/wending/hay-babes.jpg"
-      // ], {
-      //   duration: 6000,
-      //   fade: 760
-      // });
+    <script type="text/javascript">
+      var Slideshow = {
+        intervalID: null,
 
-      // var body = document.getElementsByTagName("body")[0]
-      // Hammer(body).on("swipeleft", function(event) {
-      //   event.gesture.preventDefault()
-      //   $.backstretch("next");
-      // }).on("swiperight", function(event) {
-      //   event.gesture.preventDefault()
-      //   $.backstretch("prev");
-      // });
+        advance: function() {
+          var currentSlide = document.getElementsByClassName("slide-current")[0];
+          var nextSlide    = document.getElementsByClassName("slide-next")[0];
 
-      $("a[href='/about']").click(function(e) {
+          currentSlide.className = "slide slide-previous";
+          nextSlide.className    = "slide slide-current";
+
+          if (nextSlide.nextElementSibling) {
+            nextSlide.nextElementSibling.className = "slide slide-next";
+          } else {
+            document.getElementsByClassName("slide")[0].className = "slide slide-next";
+          }
+
+          currentSlide.addEventListener("webkitAnimationEnd", function(e) {
+            e.target.className = "slide";
+          });
+        },
+
+        start: function() {
+          this.intervalID = setInterval(this.advance, 5200);
+        },
+
+        stop: function() {
+          clearInterval(this.intervalID);
+        }
+      }
+
+      var aboutBtn = document.getElementById("about-btn");
+      aboutBtn.addEventListener("click", function(e) {
         e.preventDefault();
+        var aboutArticle = document.getElementById("about");
+        var slideshow = document.getElementById("slideshow");
 
-        var aboutLink = $(this);
-        var about = $("#about");
-
-        if (aboutLink.text() === "About") {
-          // $(".backstretch img").addClass("blur");
-          about.addClass("in").removeClass("out")
-          $(this).text("Close");
-          // $.backstretch("pause");
+        if (aboutBtn.innerText === "About") {
+          Slideshow.stop();
+          slideshow.className = "blur";
+          aboutArticle.className = "in";
+          aboutBtn.innerText = "Close";
         } else {
-          // $(".backstretch img").removeClass("blur").addClass("focus");
-          about.addClass("out").removeClass("in");
-          $(this).text("About");
-          // $.backstretch("prev");
-          // $.backstretch("resume");
+          Slideshow.start();
+          slideshow.className = "focus";
+          aboutArticle.className = "out";
+          aboutBtn.innerText = "About";
         }
       })
-    </script>
 
-    <div id="vignette"></div>
+      Slideshow.start();
+    </script>
 
     <script type="text/javascript">
       var _gauges = _gauges || [];
