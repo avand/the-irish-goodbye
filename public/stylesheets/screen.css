@@ -1,35 +1,102 @@
+html, body {
+  height: 100%;
+}
 body {
   color: #EDEBE8;
   font: 18px/1.4em "Podkova", serif;
   background: black;
   margin: 0;
-  padding: 19px 21px 0;
   box-sizing: border-box;
+}
+
+section {
+  padding: 19px 21px 0;
+  position: relative;
 }
 
 header {
   overflow: auto;
 }
 
-#vignette {
+#slideshow { z-index: 0; }
+#vignette  { z-index: 1; }
+section    { z-index: 2; }
+
+.bleed {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+#vignette {
   box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.8);
-  z-index: -1;
+}
+#slideshow {
+  height: 100%;
+  position: relative;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
+.slide          { z-index: 0; }
+.slide-next     { z-index: 1; }
+.slide-current  { z-index: 2; }
+.slide-previous { z-index: 3; }
 
-.backstretch img {
+.slide-previous {
+  -webkit-animation-name: fly-out;
+  -webkit-animation-duration: 760ms;
+  -webkit-animation-fill-mode: forwards;
 }
-.backstretch img.blur {
+@-webkit-keyframes fly-out {
+  to {
+    left: -27%;
+    opacity: 0;
+  }
+}
+
+#slide-1  { background-image: url(../images/wending/m-s-hay-babe.jpg) }
+#slide-2  { background-image: url(../images/wending/hay-baby.jpg) }
+#slide-3  { background-image: url(../images/wending/don-the-vail.jpg) }
+#slide-4  { background-image: url(../images/wending/forever-is-now.jpg) }
+#slide-5  { background-image: url(../images/wending/laugh-from-the-heart.jpg) }
+#slide-6  { background-image: url(../images/wending/ha-babe.jpg) }
+#slide-7  { background-image: url(../images/wending/kiss-and-breathe.jpg) }
+#slide-8  { background-image: url(../images/wending/my-number-one.jpg) }
+#slide-9  { background-image: url(../images/wending/lens-flare.jpg) }
+#slide-10 { background-image: url(../images/wending/uphill-from-here.jpg) }
+#slide-11 { background-image: url(../images/wending/love-you-mom.jpg) }
+#slide-12 { background-image: url(../images/wending/wendy-and-mom.jpg) }
+#slide-13 { background-image: url(../images/wending/sunny-vail.jpg) }
+#slide-14 { background-image: url(../images/wending/canopei.jpg) }
+#slide-15 { background-image: url(../images/wending/picture-in-picture.jpg) }
+#slide-16 { background-image: url(../images/wending/crystal-clearing.jpg) }
+#slide-17 { background-image: url(../images/wending/triangle-of-tweed.jpg) }
+#slide-18 { background-image: url(../images/wending/hay-you.jpg) }
+#slide-19 { background-image: url(../images/wending/look-at-the-camera.jpg) }
+#slide-21 { background-image: url(../images/wending/pei-pie.jpg) }
+#slide-22 { background-image: url(../images/wending/fedora.jpg) }
+#slide-23 { background-image: url(../images/wending/cupcakes.jpg) }
+#slide-24 { background-image: url(../images/wending/hay-babes.jpg) }
+
+.blur {
   -webkit-animation-name: add-gaussian-blur;
   -webkit-animation-duration: 900ms;
   -webkit-animation-fill-mode: forwards;
 }
-.backstretch img.focus {
+.focus {
   -webkit-animation-name: remove-gaussian-blur;
   -webkit-animation-duration: 900ms;
   -webkit-animation-fill-mode: forwards;
@@ -42,7 +109,6 @@ header {
   from { -webkit-filter: blur(65px); }
   to   { -webkit-filter: blur(0px);  }
 }
-
 
 a, a:link, a:visited {
   color: rgba(189, 246, 196, 1.0);
@@ -137,7 +203,7 @@ and (max-width: 980px) {
 @media only screen
 and (min-width: 320px)
 and (max-width: 480px) {
-  body {
+  section {
     padding: 23px 27px;
   }
   #vignette {
