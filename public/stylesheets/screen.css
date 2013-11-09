@@ -1,3 +1,4 @@
+html { -webkit-transform: translate3d(0,0,0); } /* https://coderwall.com/p/j5udlw */
 html, body {
   height: 100%;
 }
