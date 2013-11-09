@@ -30,18 +30,18 @@ var Slideshow = {
 
 var About = {
   show: function(event) {
+    Slideshow.stop();
     event.target.style.display = "none";
     document.getElementById("about").className = "in";
     document.getElementById("about-close").style.display = "inline-block";
-    Slideshow.stop();
     document.getElementById("slideshow").className = "blur";
   },
 
   hide: function(event) {
+    Slideshow.start();
     event.target.style.display = "none";
     document.getElementById("about").className = "out";
     document.getElementById("about-btn").style.display = "inline-block";
-    Slideshow.start();
     document.getElementById("slideshow").className = "focus";
   }
 };
