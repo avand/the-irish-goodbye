@@ -40,7 +40,13 @@ var About = {
   hide: function(event) {
     Slideshow.start();
     event.target.style.display = "none";
-    document.getElementById("about").className = "out";
+
+    var about = document.getElementById("about");
+    about.className = "out";
+    about.addEventListener("webkitAnimationEnd", function(e) {
+      e.target.className = "";
+    });
+
     document.getElementById("about-btn").style.display = "inline-block";
     document.getElementById("slideshow").className = "focus";
   }
