@@ -86,10 +86,9 @@
     <div id="vignette" class="bleed"></div>
 
     <script>
-      var aboutBtn = document.getElementById("about-btn");
-      var hammertime = Hammer(aboutBtn).on("tap", About.show);
-      var aboutClose = document.getElementById("about-close");
-      var hammertime = Hammer(aboutClose).on("tap", About.hide);
+      Hammer(document.getElementById("about-btn")).on("tap", About.show);
+      Hammer(document.getElementById("about-close")).on("tap", About.hide);
+      Hammer(document.getElementById("slideshow-container")).on("swipeleft", Slideshow.advance);
 
       Slideshow.start();
     </script>
