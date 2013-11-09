@@ -51,15 +51,10 @@ section    { z-index: 2; }
   -o-background-size: cover;
 }
 
-.slide          { z-index: 0; }
-.slide-next     { z-index: 1; }
-.slide-current  { z-index: 2; }
-.slide-previous { z-index: 3; }
-
-.slide:not(.slide-current),
-.slide:not(.slide-next) {
-  display: none;
-}
+.slide          { z-index: 0; display: none; }
+.slide-next     { z-index: 1; display: block }
+.slide-current  { z-index: 2; display: block }
+.slide-previous { z-index: 3; display: block }
 
 .slide-previous {
   -webkit-animation-name: fly-out;
