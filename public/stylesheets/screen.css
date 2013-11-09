@@ -19,9 +19,8 @@ header {
   overflow: auto;
 }
 
-#slideshow { z-index: 0; }
-#vignette  { z-index: 1; }
-section    { z-index: 2; }
+#slideshow-container { z-index: 0; }
+section              { z-index: 1; }
 
 #slideshow-container {
   position: fixed;
@@ -49,14 +48,12 @@ section    { z-index: 2; }
 }
 
 .slide          { z-index: 0; display: none; }
-.slide-next     { z-index: 1; display: block }
+.slide-next     { z-index: 1; display: none }
 .slide-current  { z-index: 2; display: block }
 .slide-previous { z-index: 3; display: block }
 
 .slide-previous {
-  -webkit-animation-name: fly-out;
-  -webkit-animation-duration: 760ms;
-  -webkit-animation-fill-mode: forwards;
+  -webkit-animation: 760ms fly-out forwards;
 }
 
 #slide-1  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/m-s-hay-babe.jpg) }
@@ -83,16 +80,6 @@ section    { z-index: 2; }
 #slide-23 { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/cupcakes.jpg) }
 #slide-24 { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/hay-babes.jpg) }
 
-.blur {
-  -webkit-animation-name: add-gaussian-blur;
-  -webkit-animation-duration: 900ms;
-  -webkit-animation-fill-mode: forwards;
-}
-.focus {
-  -webkit-animation-name: remove-gaussian-blur;
-  -webkit-animation-duration: 900ms;
-  -webkit-animation-fill-mode: forwards;
-}
 
 a, a:link, a:visited {
   color: rgba(189, 246, 196, 1.0);
@@ -218,3 +205,6 @@ and (max-width: 480px) {
   from { -webkit-filter: blur(65px); }
   to   { -webkit-filter: blur(0px);  }
 }
+
+.blur { -webkit-animation: 900ms add-gaussian-blur forwards; }
+.focus { -webkit-animation: 900ms remove-gaussian-blur; }

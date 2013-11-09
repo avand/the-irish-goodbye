@@ -56,7 +56,7 @@
       </article>
     </section>
 
-    <div id="slideshow-container" class="bleed">
+    <div id="slideshow-container">
       <div id="slideshow">
         <div id="slide-1" class="slide slide-current"></div>
         <div id="slide-2" class="slide slide-next"></div>
@@ -87,7 +87,7 @@
     <script>
       Hammer(document.getElementById("about-btn")).on("tap", About.show);
       Hammer(document.getElementById("about-close")).on("tap", About.hide);
-      Hammer(document.getElementById("slideshow-container")).on("swipeleft", Slideshow.advance);
+      Hammer(document.getElementsByTagName("body")[0]).on("swipeleft", Slideshow.advance);
 
       Slideshow.start();
     </script>

@@ -8,15 +8,17 @@ var Slideshow = {
     currentSlide.className = "slide slide-previous";
     nextSlide.className    = "slide slide-current";
 
-    if (nextSlide.nextElementSibling) {
-      nextSlide.nextElementSibling.className = "slide slide-next";
-    } else {
-      document.getElementsByClassName("slide")[0].className = "slide slide-next";
-    }
-
     currentSlide.addEventListener("webkitAnimationEnd", function(e) {
       e.target.className = "slide";
     });
+
+    if (nextSlide.nextElementSibling) {
+      nextSlide = nextSlide.nextElementSibling;
+    } else {
+      nextSlide = document.getElementsByClassName("slide")[0];
+    }
+
+    nextSlide.className = "slide slide-next";
   },
 
   start: function() {
@@ -31,23 +33,24 @@ var Slideshow = {
 var About = {
   show: function(event) {
     Slideshow.stop();
+
     event.target.style.display = "none";
-    document.getElementById("about").className = "in";
     document.getElementById("about-close").style.display = "inline-block";
-    document.getElementById("slideshow").className = "blur";
+
+    document.getElementsByClassName("slide-current")[0].className = "slide slide-current blur";
+    document.getElementById("about").className = "in";
   },
 
   hide: function(event) {
     Slideshow.start();
+
     event.target.style.display = "none";
+    document.getElementById("about-btn").style.display = "inline-block";
+
+    document.getElementsByClassName("slide-current")[0].className = "slide slide-current focus";
 
     var about = document.getElementById("about");
     about.className = "out";
-    about.addEventListener("webkitAnimationEnd", function(e) {
-      e.target.className = "";
-    });
-
-    document.getElementById("about-btn").style.display = "inline-block";
-    document.getElementById("slideshow").className = "focus";
+    about.addEventListener("webkitAnimationEnd", function(e) { e.target.className = ""; });
   }
 };
