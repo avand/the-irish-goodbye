@@ -26,27 +26,22 @@ var Slideshow = {
   stop: function() {
     clearInterval(this.intervalID);
   }
-}
+};
 
-window.onload = function() {
-  var aboutBtn = document.getElementById("about-btn");
-  aboutBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    var aboutArticle = document.getElementById("about");
-    var slideshow = document.getElementById("slideshow");
+var About = {
+  show: function(event) {
+    event.target.style.display = "none";
+    document.getElementById("about").className = "in";
+    document.getElementById("about-close").style.display = "inline-block";
+    Slideshow.stop();
+    document.getElementById("slideshow").className = "blur";
+  },
 
-    if (aboutBtn.innerText === "About") {
-      Slideshow.stop();
-      slideshow.className = "blur";
-      aboutArticle.className = "in";
-      aboutBtn.innerText = "Close";
-    } else {
-      Slideshow.start();
-      slideshow.className = "focus";
-      aboutArticle.className = "out";
-      aboutBtn.innerText = "About";
-    }
-  })
-
-  Slideshow.start();
-}
+  hide: function(event) {
+    event.target.style.display = "none";
+    document.getElementById("about").className = "out";
+    document.getElementById("about-btn").style.display = "inline-block";
+    Slideshow.start();
+    document.getElementById("slideshow").className = "focus";
+  }
+};
