@@ -31,6 +31,14 @@ var Slideshow = {
 };
 
 var About = {
+  animationEnd: function(event) {
+    switch (event.target.className) {
+      case "out":
+        event.target.removeAttribute("class");
+        break;
+    }
+  },
+
   show: function(event) {
     Slideshow.stop();
 
@@ -39,6 +47,8 @@ var About = {
 
     document.getElementsByClassName("slide-current")[0].className = "slide slide-current blur";
     document.getElementById("about").className = "in";
+
+    about.addEventListener("webkitAnimationEnd", About.animationEnd);
   },
 
   hide: function(event) {
@@ -51,6 +61,5 @@ var About = {
 
     var about = document.getElementById("about");
     about.className = "out";
-    about.addEventListener("webkitAnimationEnd", function(e) { e.target.className = ""; });
   }
 };
