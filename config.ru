@@ -15,12 +15,14 @@ use Rack::Rewrite do
 end
 
 run lambda { |env|
+  index = File.open('public/index.html', File::RDONLY)
+
   [
     200, 
     {
-      'Content-Type'  => 'text/html', 
-      'Cache-Control' => 'public, max-age=86400' 
+      "Content-Type" => "text/html",
+      "Content-Length" => index.size.to_s
     },
-    File.open('public/index.html', File::RDONLY)
+    index
   ]
 }
