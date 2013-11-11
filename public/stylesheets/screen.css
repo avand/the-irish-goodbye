@@ -193,7 +193,7 @@ and (max-width: 480px) {
 }
 @-webkit-keyframes fly-out {
   to {
-    left: -27%;
+    -webkit-transform: translate3d(-27%, 0, 0);
     opacity: 0;
   }
 }
