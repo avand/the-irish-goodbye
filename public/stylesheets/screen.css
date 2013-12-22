@@ -117,29 +117,29 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
 .slide-previous {
   -webkit-animation: 760ms fly-out forwards;
 }
-.slide:nth-child(1)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/m-s-hay-babe.jpg) }
-.slide:nth-child(2)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/hay-baby.jpg) }
-.slide:nth-child(3)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/don-the-vail.jpg) }
-.slide:nth-child(4)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/forever-is-now.jpg) }
-.slide:nth-child(5)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/laugh-from-the-heart.jpg) }
-.slide:nth-child(6)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/ha-babe.jpg) }
-.slide:nth-child(7)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/kiss-and-breathe.jpg) }
-.slide:nth-child(8)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/my-number-one.jpg) }
-.slide:nth-child(9)  { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/lens-flare.jpg) }
-.slide:nth-child(10) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/uphill-from-here.jpg) }
-.slide:nth-child(11) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/love-you-mom.jpg) }
-.slide:nth-child(12) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/wendy-and-mom.jpg) }
-.slide:nth-child(13) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/sunny-vail.jpg) }
-.slide:nth-child(14) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/canopei.jpg) }
-.slide:nth-child(15) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/picture-in-picture.jpg) }
-.slide:nth-child(16) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/crystal-clearing.jpg) }
-.slide:nth-child(17) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/triangle-of-tweed.jpg) }
-.slide:nth-child(18) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/hay-you.jpg) }
-.slide:nth-child(19) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/look-at-the-camera.jpg) }
-.slide:nth-child(20) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/pei-pie.jpg) }
-.slide:nth-child(21) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/fedora.jpg) }
-.slide:nth-child(22) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/cupcakes.jpg) }
-.slide:nth-child(23) { background-image: url(http://trial.resrc.it/http://irishgoodbyesf.com/images/wending/hay-babes.jpg) }
+.slide:nth-child(1)  { background-image: url(/images/wending/m-s-hay-babe.jpg) }
+.slide:nth-child(2)  { background-image: url(/images/wending/hay-baby.jpg) }
+.slide:nth-child(3)  { background-image: url(/images/wending/don-the-vail.jpg) }
+.slide:nth-child(4)  { background-image: url(/images/wending/forever-is-now.jpg) }
+.slide:nth-child(5)  { background-image: url(/images/wending/laugh-from-the-heart.jpg) }
+.slide:nth-child(6)  { background-image: url(/images/wending/ha-babe.jpg) }
+.slide:nth-child(7)  { background-image: url(/images/wending/kiss-and-breathe.jpg) }
+.slide:nth-child(8)  { background-image: url(/images/wending/my-number-one.jpg) }
+.slide:nth-child(9)  { background-image: url(/images/wending/lens-flare.jpg) }
+.slide:nth-child(10) { background-image: url(/images/wending/uphill-from-here.jpg) }
+.slide:nth-child(11) { background-image: url(/images/wending/love-you-mom.jpg) }
+.slide:nth-child(12) { background-image: url(/images/wending/wendy-and-mom.jpg) }
+.slide:nth-child(13) { background-image: url(/images/wending/sunny-vail.jpg) }
+.slide:nth-child(14) { background-image: url(/images/wending/canopei.jpg) }
+.slide:nth-child(15) { background-image: url(/images/wending/picture-in-picture.jpg) }
+.slide:nth-child(16) { background-image: url(/images/wending/crystal-clearing.jpg) }
+.slide:nth-child(17) { background-image: url(/images/wending/triangle-of-tweed.jpg) }
+.slide:nth-child(18) { background-image: url(/images/wending/hay-you.jpg) }
+.slide:nth-child(19) { background-image: url(/images/wending/look-at-the-camera.jpg) }
+.slide:nth-child(20) { background-image: url(/images/wending/pei-pie.jpg) }
+.slide:nth-child(21) { background-image: url(/images/wending/fedora.jpg) }
+.slide:nth-child(22) { background-image: url(/images/wending/cupcakes.jpg) }
+.slide:nth-child(23) { background-image: url(/images/wending/hay-babes.jpg) }
 
 @-webkit-keyframes fade-in {
   from {
