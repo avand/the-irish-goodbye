@@ -117,30 +117,30 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
 .slide-previous {
   -webkit-animation: 760ms fly-out forwards;
 }
-.slide:nth-child(1)  { background-image: url(/images/harrison-megan/001.jpg) }
-.slide:nth-child(2)  { background-image: url(/images/harrison-megan/002.jpg) }
-.slide:nth-child(3)  { background-image: url(/images/harrison-megan/003.jpg) }
-.slide:nth-child(4)  { background-image: url(/images/harrison-megan/004.jpg) }
-.slide:nth-child(5)  { background-image: url(/images/harrison-megan/005.jpg) }
-.slide:nth-child(6)  { background-image: url(/images/harrison-megan/006.jpg) }
-.slide:nth-child(7)  { background-image: url(/images/harrison-megan/007.jpg) }
-.slide:nth-child(8)  { background-image: url(/images/harrison-megan/008.jpg) }
-.slide:nth-child(9)  { background-image: url(/images/harrison-megan/009.jpg) }
-.slide:nth-child(10) { background-image: url(/images/harrison-megan/010.jpg) }
-.slide:nth-child(11) { background-image: url(/images/harrison-megan/011.jpg) }
-.slide:nth-child(12) { background-image: url(/images/harrison-megan/012.jpg) }
-.slide:nth-child(13) { background-image: url(/images/harrison-megan/013.jpg) }
-.slide:nth-child(14) { background-image: url(/images/harrison-megan/014.jpg) }
-.slide:nth-child(15) { background-image: url(/images/harrison-megan/015.jpg) }
-.slide:nth-child(16) { background-image: url(/images/harrison-megan/016.jpg) }
-.slide:nth-child(17) { background-image: url(/images/harrison-megan/017.jpg) }
-.slide:nth-child(18) { background-image: url(/images/harrison-megan/018.jpg) }
-.slide:nth-child(19) { background-image: url(/images/harrison-megan/019.jpg) }
-.slide:nth-child(20) { background-image: url(/images/harrison-megan/020.jpg) }
-.slide:nth-child(21) { background-image: url(/images/harrison-megan/021.jpg) }
-.slide:nth-child(22) { background-image: url(/images/harrison-megan/022.jpg) }
-.slide:nth-child(23) { background-image: url(/images/harrison-megan/023.jpg) }
-.slide:nth-child(24) { background-image: url(/images/harrison-megan/024.jpg) }
+.slide:nth-child(1)  { background-image: url(/images/harrison-megan/01.jpg) }
+.slide:nth-child(2)  { background-image: url(/images/harrison-megan/02.jpg) }
+.slide:nth-child(3)  { background-image: url(/images/harrison-megan/03.jpg) }
+.slide:nth-child(4)  { background-image: url(/images/harrison-megan/04.jpg) }
+.slide:nth-child(5)  { background-image: url(/images/harrison-megan/05.jpg) }
+.slide:nth-child(6)  { background-image: url(/images/harrison-megan/06.jpg) }
+.slide:nth-child(7)  { background-image: url(/images/harrison-megan/07.jpg) }
+.slide:nth-child(8)  { background-image: url(/images/harrison-megan/08.jpg) }
+.slide:nth-child(9)  { background-image: url(/images/harrison-megan/09.jpg) }
+.slide:nth-child(10) { background-image: url(/images/harrison-megan/10.jpg) }
+.slide:nth-child(11) { background-image: url(/images/harrison-megan/11.jpg) }
+.slide:nth-child(12) { background-image: url(/images/harrison-megan/12.jpg) }
+.slide:nth-child(13) { background-image: url(/images/harrison-megan/13.jpg) }
+.slide:nth-child(14) { background-image: url(/images/harrison-megan/14.jpg) }
+.slide:nth-child(15) { background-image: url(/images/harrison-megan/15.jpg) }
+.slide:nth-child(16) { background-image: url(/images/harrison-megan/16.jpg) }
+.slide:nth-child(17) { background-image: url(/images/harrison-megan/17.jpg) }
+.slide:nth-child(18) { background-image: url(/images/harrison-megan/18.jpg) }
+.slide:nth-child(19) { background-image: url(/images/harrison-megan/19.jpg) }
+.slide:nth-child(20) { background-image: url(/images/harrison-megan/20.jpg) }
+.slide:nth-child(21) { background-image: url(/images/harrison-megan/21.jpg) }
+.slide:nth-child(22) { background-image: url(/images/harrison-megan/22.jpg) }
+.slide:nth-child(23) { background-image: url(/images/harrison-megan/23.jpg) }
+.slide:nth-child(24) { background-image: url(/images/harrison-megan/24.jpg) }
 
 @-webkit-keyframes fade-in {
   from {
