@@ -11,8 +11,9 @@ use Rack::Static, {
 }
 
 use Rack::Rewrite do
-  r301 "/tim-wendy",      "https://www.dropbox.com/sh/uvap3fab5w6x5oi/V2UVr3Blje"
-  r301 "/harrison-megan", "https://www.dropbox.com/sh/b79cixqt7u0kycm/qVpO0uayM4"
+  r301 "/tim-wendy",      "https://www.dropbox.com/sh/dp7vlzof5bl0tz2/AAChkIdbm_lB14BOdA4QzRUta"
+  r301 "/harrison-megan", "https://www.dropbox.com/sh/0kpjzs6pp6pg4ve/AADc871SQf0HSWdrVWdlS6zwa"
+  r301 "/april-jerry",    "https://www.dropbox.com/sh/0bbt18qod4z262y/AABHux6B6unB1M3gwt6i7R9ra"
 end
 
 run lambda { |env|
