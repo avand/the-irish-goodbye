@@ -15,9 +15,13 @@ section {
 }
 header {
   overflow: auto;
+  -webkit-transition: opacity 5.2s linear;
+  transition: opacity 5.2s linear;
 }
 #slideshow-container { z-index: 0; }
 section              { z-index: 1; }
+
+.transparent { opacity: 0; }
 
 a,
 a:link,
@@ -31,6 +35,7 @@ a:focus,
 a:active {
   color: rgba(103, 225, 176, 1.0);
 }
+
 .btn,
 .btn:link,
 .btn:visited {
@@ -95,6 +100,8 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
 #slideshow {
   height: 100%;
   position: relative;
+  -webkit-transition: opacity 900ms;
+  transition: opacity 900ms;
 }
 .slide {
   position: absolute;

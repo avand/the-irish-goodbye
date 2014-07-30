@@ -17,7 +17,7 @@
   </head>
   <body>
     <section>
-      <header>
+      <header class="transparent">
         <h1>The Irish Goodbye</h1>
 
         <nav>
@@ -61,7 +61,7 @@
     </section>
 
     <div id="slideshow-container">
-      <div id="slideshow">
+      <div id="slideshow" class="transparent">
         <div class="slide slide-current"></div>
         <div class="slide slide-next"></div>
         <div class="slide"></div>
@@ -93,6 +93,9 @@
       Hammer(document.getElementsByTagName("body")[0]).on("swiperight", Slideshow.returnSlide);
 
       Slideshow.init();
+
+      setTimeout(function() { document.querySelector("#slideshow").classList.remove("transparent") }, 400);
+      setTimeout(function() { document.querySelector("header").classList.remove("transparent") }, 1400);
     </script>
 
     <script>
