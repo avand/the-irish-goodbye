@@ -89,8 +89,7 @@
     <script>
       Hammer(document.getElementById("about-btn")).on("tap", About.show);
       Hammer(document.getElementById("about-close")).on("tap", About.hide);
-      Hammer(document.getElementsByTagName("body")[0]).on("swipeleft", Slideshow.advanceSlide);
-      Hammer(document.getElementsByTagName("body")[0]).on("swiperight", Slideshow.returnSlide);
+      Hammer(document.getElementsByTagName("body")[0]).on("tap", Slideshow.advanceSlide);
 
       Slideshow.init();
 
