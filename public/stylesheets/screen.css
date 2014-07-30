@@ -115,7 +115,10 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
 .slide-current  { z-index: 2; display: block }
 .slide-previous { z-index: 3; display: block }
 .slide-previous {
-  -webkit-animation: 760ms fly-out forwards;
+  -webkit-animation: 760ms fly-out forwards cubic-bezier(.6, 0, .4, 1);
+}
+.slide-previous.reversed {
+  -webkit-animation-direction: reverse;
 }
 .slide:nth-child(1)  { background-image: url(/images/april-jerry/01.jpg) }
 .slide:nth-child(2)  { background-image: url(/images/april-jerry/02.jpg) }
@@ -154,6 +157,7 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
   to   { opacity: 0.0; }
 }
 @-webkit-keyframes fly-out {
+  25% { opacity: 1; }
   to {
     -webkit-transform: translate3d(-27%, 0, 0);
     opacity: 0;

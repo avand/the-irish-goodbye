@@ -1,28 +1,55 @@
 var Slideshow = {
   intervalID: null,
 
-  advance: function() {
-    var currentSlide = document.getElementsByClassName("slide-current")[0];
-    var nextSlide    = document.getElementsByClassName("slide-next")[0];
+  advanceSlide: function() {
+    var currentSlide      = document.querySelector(".slide-current");
+    var nextSlide         = document.querySelector(".slide-next");
+    var oneAfterNextSlide = nextSlide.nextElementSibling || document.querySelector(".slide:first-child");
 
-    currentSlide.className = "slide slide-previous";
-    nextSlide.className    = "slide slide-current";
+    function animationEnded(event) {
+      oneAfterNextSlide.classList.add("slide-next");
 
-    currentSlide.addEventListener("webkitAnimationEnd", function(e) {
-      e.target.className = "slide";
-    });
+      event.target.classList.remove("slide-previous");
 
-    if (nextSlide.nextElementSibling) {
-      nextSlide = nextSlide.nextElementSibling;
-    } else {
-      nextSlide = document.getElementsByClassName("slide")[0];
+      currentSlide.removeEventListener("webkitAnimationEnd", animationEnded);
     }
 
-    nextSlide.className = "slide slide-next";
+    currentSlide.addEventListener("webkitAnimationEnd", animationEnded);
+
+    nextSlide.classList.add("slide-current");
+    nextSlide.classList.remove("slide-next");
+
+    currentSlide.classList.remove("slide-current")
+    currentSlide.classList.add("slide-previous")
+  },
+
+  returnSlide: function() {
+    var currentSlide  = document.querySelector(".slide-current");
+    var nextSlide     = document.querySelector(".slide-next");
+    var previousSlide = currentSlide.previousElementSibling || document.querySelector(".slide:last-child");
+
+    function animationEnded(event) {
+      currentSlide.classList.remove("slide-current");
+      currentSlide.classList.add("slide-next");
+
+      event.target.classList.remove("slide-previous");
+      event.target.classList.remove("reversed");
+      event.target.classList.add("slide-current");
+
+      nextSlide.classList.remove("slide-next");
+
+      previousSlide.removeEventListener("webkitAnimationEnd", animationEnded);
+    }
+
+    previousSlide.addEventListener("webkitAnimationEnd", animationEnded);
+
+    nextSlide.classList.remove("slide-next");
+    previousSlide.classList.add("reversed");
+    previousSlide.classList.add("slide-previous");
   },
 
   start: function() {
-    this.intervalID = setInterval(this.advance, 5200);
+    this.intervalID = setInterval(this.advanceSlide, 5200);
   },
 
   stop: function() {
@@ -30,10 +57,10 @@ var Slideshow = {
   },
 
   handleKeydown: function(event) {
-    if (event.which == 39) {
-      this.stop();
-      this.advance();
-      this.start();
+    if (event.which == 37 || event.which == 39) {
+      if (this.intervalID) { this.stop(); this.start(); }
+
+      event.which == 37 ? this.returnSlide() : this.advanceSlide();
     }
   },
 
