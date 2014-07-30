@@ -27,6 +27,23 @@ var Slideshow = {
 
   stop: function() {
     clearInterval(this.intervalID);
+  },
+
+  handleKeydown: function(event) {
+    if (event.which == 39) {
+      this.stop();
+      this.advance();
+      this.start();
+    }
+  },
+
+  bindKeyboardControls: function() {
+    document.addEventListener("keydown", this.handleKeydown.bind(this))
+  },
+
+  init: function() {
+    this.bindKeyboardControls();
+    this.start();
   }
 };
 
