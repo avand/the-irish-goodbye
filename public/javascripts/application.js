@@ -4,6 +4,9 @@ var Slideshow = {
   advanceSlide: function() {
     var currentSlide      = document.querySelector(".slide-current");
     var nextSlide         = document.querySelector(".slide-next");
+
+    if (!nextSlide) return;
+
     var oneAfterNextSlide = nextSlide.nextElementSibling || document.querySelector(".slide:first-child");
 
     function animationEnded(event) {
@@ -26,6 +29,9 @@ var Slideshow = {
   returnSlide: function() {
     var currentSlide  = document.querySelector(".slide-current");
     var nextSlide     = document.querySelector(".slide-next");
+
+    if (!nextSlide) return;
+
     var previousSlide = currentSlide.previousElementSibling || document.querySelector(".slide:last-child");
 
     function animationEnded(event) {
