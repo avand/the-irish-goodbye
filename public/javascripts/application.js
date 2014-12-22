@@ -1,3 +1,11 @@
+function attachAnimationEndCallback(obj, method, callback) {
+  var events = ['animationend', 'webkitAnimationEnd', 'MSAnimationEnd', 'oAnimationEnd'];
+
+  for (var i = 0; i < events.length; i++) {
+    obj[method](events[i], callback)
+  }
+};
+
 var Slideshow = {
   intervalID: null,
 
@@ -14,10 +22,10 @@ var Slideshow = {
 
       event.target.classList.remove("slide-previous");
 
-      currentSlide.removeEventListener("webkitAnimationEnd", animationEnded);
+      attachAnimationEndCallback(currentSlide, 'removeEventListener', animationEnded);
     }
 
-    currentSlide.addEventListener("webkitAnimationEnd", animationEnded);
+    attachAnimationEndCallback(currentSlide, 'addEventListener', animationEnded);
 
     nextSlide.classList.add("slide-current");
     nextSlide.classList.remove("slide-next");
@@ -44,10 +52,10 @@ var Slideshow = {
 
       nextSlide.classList.remove("slide-next");
 
-      previousSlide.removeEventListener("webkitAnimationEnd", animationEnded);
+      attachAnimationEndCallback(previousSlide, 'removeEventListener', animationEnded);
     }
 
-    previousSlide.addEventListener("webkitAnimationEnd", animationEnded);
+    attachAnimationEndCallback(previousSlide, 'addEventListener', animationEnded);
 
     nextSlide.classList.remove("slide-next");
     previousSlide.classList.add("reversed");

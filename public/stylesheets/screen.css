@@ -87,8 +87,14 @@ article.in,
 article.out {
   display: block;
 }
-article.in  { -webkit-animation: 1100ms ease-out fade-in forwards; }
-article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
+article.in  {
+  -webkit-animation: 1100ms ease-out fade-in forwards;
+  animation: 1100ms ease-out fade-in forwards;
+}
+article.out {
+  -webkit-animation: 600ms ease-out fade-out forwards;
+  animation: 600ms ease-out fade-out forwards;
+}
 
 #slideshow-container {
   position: fixed;
@@ -111,21 +117,21 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
   height: 100%;
   background-position: center center;
   background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.8);
   -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 .slide          { z-index: 0; display: none; }
 .slide-next     { z-index: 1; display: none }
 .slide-current  { z-index: 2; display: block }
 .slide-previous { z-index: 3; display: block }
 .slide-previous {
-  -webkit-animation: 660ms fly-out forwards cubic-bezier(.7, 0, .4, .8);
+  -webkit-animation: 900ms fly-out forwards cubic-bezier(.7, 0, .4, .8);
+  animation: 900ms fly-out forwards cubic-bezier(.7, 0, .4, .8);
 }
 .slide-previous.reversed {
-  -webkit-animation: 660ms fly-in forwards reverse cubic-bezier(.7, 0, .4, .8);
+  -webkit-animation: 600ms fly-in forwards reverse cubic-bezier(.7, 0, .4, .8);
+  animation: 600ms fly-in forwards reverse cubic-bezier(.7, 0, .4, .8);
 }
 .slide:nth-child(1)  { background-image: url(/images/avid-hailey/01.jpg) }
 .slide:nth-child(2)  { background-image: url(/images/avid-hailey/02.jpg) }
@@ -158,12 +164,28 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
     -webkit-transform: scale(1, 1);
   }
 }
+@keyframes fade-in {
+  from {
+    opacity: 0.0;
+    transform: scale(1.03, 1.03);
+  }
+  to {
+    opacity: 1.0;
+    transform: scale(1, 1);
+  }
+}
+
 @-webkit-keyframes fade-out {
   from { opacity: 1.0; }
   to   { opacity: 0.0; }
 }
+@keyframes fade-out {
+  from { opacity: 1.0; }
+  to   { opacity: 0.0; }
+}
+
 @-webkit-keyframes fly-out {
-  50% {
+  80% {
     opacity: 1;
     -webkit-transform: translate3d(3%, 0, 0) rotate(2deg) scale(1.01, 1.01);
   }
@@ -172,12 +194,30 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
     -webkit-transform: translate3d(-28%, 6%, 0) rotate(-10deg) scale(1.2, 1.2);
   }
 }
+@keyframes fly-out {
+  80% {
+    opacity: 1;
+    transform: translate3d(3%, 0, 0) rotate(2deg) scale(1.01, 1.01);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-28%, 6%, 0) rotate(-10deg) scale(1.2, 1.2);
+  }
+}
+
 @-webkit-keyframes fly-in {
   to {
     opacity: 0;
     -webkit-transform: translate3d(-14%, 3%, 0) rotate(-5deg) scale(1.1, 1.1);
   }
 }
+@keyframes fly-in {
+  to {
+    opacity: 0;
+    transform: translate3d(-14%, 3%, 0) rotate(-5deg) scale(1.1, 1.1);
+  }
+}
+
 @-webkit-keyframes add-gaussian-blur {
   from { -webkit-filter: blur(0px);  }
   to   { -webkit-filter: blur(65px); }
