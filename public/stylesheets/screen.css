@@ -127,27 +127,26 @@ article.out { -webkit-animation: 600ms ease-out fade-out forwards; }
 .slide-previous.reversed {
   -webkit-animation: 660ms fly-in forwards reverse cubic-bezier(.7, 0, .4, .8);
 }
-.slide:nth-child(1)  { background-image: url(/images/april-jerry/01.jpg) }
-.slide:nth-child(2)  { background-image: url(/images/april-jerry/02.jpg) }
-.slide:nth-child(3)  { background-image: url(/images/april-jerry/03.jpg) }
-.slide:nth-child(4)  { background-image: url(/images/april-jerry/04.jpg) }
-.slide:nth-child(5)  { background-image: url(/images/april-jerry/05.jpg) }
-.slide:nth-child(6)  { background-image: url(/images/april-jerry/06.jpg) }
-.slide:nth-child(7)  { background-image: url(/images/april-jerry/07.jpg) }
-.slide:nth-child(8)  { background-image: url(/images/april-jerry/08.jpg) }
-.slide:nth-child(9)  { background-image: url(/images/april-jerry/09.jpg) }
-.slide:nth-child(10) { background-image: url(/images/april-jerry/10.jpg) }
-.slide:nth-child(11) { background-image: url(/images/april-jerry/11.jpg) }
-.slide:nth-child(12) { background-image: url(/images/april-jerry/12.jpg) }
-.slide:nth-child(13) { background-image: url(/images/april-jerry/13.jpg) }
-.slide:nth-child(14) { background-image: url(/images/april-jerry/14.jpg) }
-.slide:nth-child(15) { background-image: url(/images/april-jerry/15.jpg) }
-.slide:nth-child(16) { background-image: url(/images/april-jerry/16.jpg) }
-.slide:nth-child(17) { background-image: url(/images/april-jerry/17.jpg) }
-.slide:nth-child(18) { background-image: url(/images/april-jerry/18.jpg) }
-.slide:nth-child(19) { background-image: url(/images/april-jerry/19.jpg) }
-.slide:nth-child(20) { background-image: url(/images/april-jerry/20.jpg) }
-.slide:nth-child(21) { background-image: url(/images/april-jerry/21.jpg) }
+.slide:nth-child(1)  { background-image: url(/images/avid-hailey/01.jpg) }
+.slide:nth-child(2)  { background-image: url(/images/avid-hailey/02.jpg) }
+.slide:nth-child(3)  { background-image: url(/images/avid-hailey/03.jpg) }
+.slide:nth-child(4)  { background-image: url(/images/avid-hailey/04.jpg) }
+.slide:nth-child(5)  { background-image: url(/images/avid-hailey/05.jpg) }
+.slide:nth-child(6)  { background-image: url(/images/avid-hailey/06.jpg) }
+.slide:nth-child(7)  { background-image: url(/images/avid-hailey/07.jpg) }
+.slide:nth-child(8)  { background-image: url(/images/avid-hailey/08.jpg) }
+.slide:nth-child(9)  { background-image: url(/images/avid-hailey/09.jpg) }
+.slide:nth-child(10) { background-image: url(/images/avid-hailey/10.jpg) }
+.slide:nth-child(11) { background-image: url(/images/avid-hailey/11.jpg) }
+.slide:nth-child(12) { background-image: url(/images/avid-hailey/12.jpg) }
+.slide:nth-child(13) { background-image: url(/images/avid-hailey/13.jpg) }
+.slide:nth-child(14) { background-image: url(/images/avid-hailey/14.jpg) }
+.slide:nth-child(15) { background-image: url(/images/avid-hailey/15.jpg) }
+.slide:nth-child(16) { background-image: url(/images/avid-hailey/16.jpg) }
+.slide:nth-child(17) { background-image: url(/images/avid-hailey/17.jpg) }
+.slide:nth-child(18) { background-image: url(/images/avid-hailey/18.jpg) }
+.slide:nth-child(19) { background-image: url(/images/avid-hailey/19.jpg) }
+.slide:nth-child(20) { background-image: url(/images/avid-hailey/20.jpg) }
 
 @-webkit-keyframes fade-in {
   from {
