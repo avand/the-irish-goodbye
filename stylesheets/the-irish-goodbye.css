@@ -9,15 +9,6 @@ body {
   margin: 0;
 }
 
-section {
-  padding: 4%;
-  position: relative;
-}
-header {
-  overflow: auto;
-  -webkit-transition: opacity 5.2s linear;
-  transition: opacity 5.2s linear;
-}
 #slideshow-container { z-index: 0; }
 section              { z-index: 1; }
 
@@ -29,59 +20,42 @@ a:visited {
   color: rgba(189, 246, 196, 1.0);
   text-decoration: none;
   transition: all 150ms linear;
+  border-bottom: 1px solid rgba(189, 246, 196, .4);
 }
 a:hover,
 a:focus,
 a:active {
-  color: rgba(103, 225, 176, 1.0);
+  border-bottom: 1px solid rgba(189, 246, 196, 1);
 }
 
-.btn,
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  text-align: center;
-  color: inherit;
-  padding: 0.3em 0.8em 0.2em;
-  text-decoration: none;
-  border-radius: 3px;
-  background-color: rgba(103, 225, 176, 0.75);
-  background-image: linear-gradient(180deg, rgba(103, 225, 176, 0.75) 0%, rgba(103, 225, 176, 0.75) 50%, rgba(47, 134, 128, 0.75) 100%);
-  background-size: 100% 200%;
-  background-repeat: repeat;
-  transition: all 150ms linear;
-}
-.btn:hover,
-.btn:focus,
-.btn:active {
-  background-position: 0 100%;
-}
 .blur  { -webkit-animation: 900ms add-gaussian-blur forwards; }
 .focus { -webkit-animation: 900ms remove-gaussian-blur; }
 
-h1 {
-  background-image: url(../images/the-irish-goodbye.svg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  width: 240px;
-  height: 160px;
-  text-indent: -9999px;
-  margin: 0;
-  float: left;
-}
 nav {
-  text-align: right;
-  margin-left: 240px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 400ms;
 }
-nav .btn {
-  min-width: 54px;
+nav:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 article {
-  margin: -52px 274px 0;
-  max-width: 640px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 60px 20%;
+  overflow: scroll;
   display: none;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.3);
   -webkit-transform: translate3d(0,0,0);
+  z-index: 999;
 }
 article.in,
 article.out {
@@ -134,16 +108,6 @@ article.out {
   animation: 600ms fly-in forwards reverse cubic-bezier(.7, 0, .4, .8);
 }
 
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0.0;
-    -webkit-transform: scale(1.03, 1.03);
-  }
-  to {
-    opacity: 1.0;
-    -webkit-transform: scale(1, 1);
-  }
-}
 @keyframes fade-in {
   from {
     opacity: 0.0;
@@ -155,25 +119,11 @@ article.out {
   }
 }
 
-@-webkit-keyframes fade-out {
-  from { opacity: 1.0; }
-  to   { opacity: 0.0; }
-}
 @keyframes fade-out {
   from { opacity: 1.0; }
   to   { opacity: 0.0; }
 }
 
-@-webkit-keyframes fly-out {
-  80% {
-    opacity: 1;
-    -webkit-transform: translate3d(3%, 0, 0) rotate(2deg) scale(1.01, 1.01);
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(-28%, 6%, 0) rotate(-10deg) scale(1.2, 1.2);
-  }
-}
 @keyframes fly-out {
   80% {
     opacity: 1;
@@ -185,12 +135,6 @@ article.out {
   }
 }
 
-@-webkit-keyframes fly-in {
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(-14%, 3%, 0) rotate(-5deg) scale(1.1, 1.1);
-  }
-}
 @keyframes fly-in {
   to {
     opacity: 0;
@@ -207,29 +151,34 @@ article.out {
   to   { -webkit-filter: blur(0px);  }
 }
 
-@media only screen and (min-width: 1280px) {
-  article {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  article {
-    margin: 1em auto 0;
-    max-width: inherit;
-  }
-}
-
 @media only screen and (max-width: 480px) {
-  h1 {
-    width: 125px;
-    height: 87px;
-  }
-  nav {
-    margin-left: 125px;
-  }
   .slide {
     box-shadow: inset 0 0 45px 10px rgba(0, 0, 0, 0.75);
   }
+}
+
+svg {
+  height: 36px;
+  display: block;
+  transition: all 1s;
+  overflow: visible;
+}
+polygon {
+  transform: scale(0.0);
+}
+polygon,
+path,
+g {
+  transition: all 1s;
+  transform-origin: 50% 50%;
+}
+.rotate {
+  transform: rotate(135deg);
+
+}
+.rotate g {
+  transform: scale(0);
+}
+.rotate polygon {
+  transform: scale(1);
 }

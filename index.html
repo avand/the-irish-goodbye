@@ -12,18 +12,71 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
     <script type="text/javascript" src="/javascripts/slideshow.js"></script>
+    <script type="text/javascript" src="/javascripts/about.js"></script>
     <script type="text/javascript" src="/javascripts/the-irish-goodbye.js"></script>
 
     <meta property="og:url" content="http://irishgoodbyesf.com">
     <meta property="og:title" content="The Irish Goodbye">
     <meta property="og:image:url" content="http://irishgoodbyesf.com/images/avid-hailey/14.jpg">
+
+    <style type="text/css">
+      polygon,
+      path{fill:white;}
+    </style>
+
   </head>
   <body>
-    <section>
-      <header class="transparent">
-        <h1>The Irish Goodbye</h1>
-      </header>
-    </section>
+    <nav>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 45.6 45.6" xml:space="preserve">
+        <g>
+          <path d="M14.7,0c-4.1,0-7.4,3.3-7.4,7.4C3.3,7.4,0,10.7,0,14.7c0,4.1,3.3,7.4,7.4,7.4l14.7,0l0-14.7C22.1,3.3,18.8,0,14.7,0z"/>
+          <path d="M0,30.9c0,4.1,3.3,7.4,7.4,7.4c0,4.1,3.3,7.4,7.4,7.4c4.1,0,7.4-3.3,7.4-7.4l0-14.7l-14.7,0C3.3,23.5,0,26.8,0,30.9z"/>
+          <path d="M30.9,45.6c4.1,0,7.4-3.3,7.4-7.4c4.1,0,7.4-3.3,7.4-7.4c0-4.1-3.3-7.4-7.4-7.4l-14.7,0l0,14.7
+          C23.5,42.3,26.8,45.6,30.9,45.6z"/>
+          <path d="M45.6,14.7c0-4.1-3.3-7.4-7.4-7.4C38.3,3.3,35,0,30.9,0c-4.1,0-7.4,3.3-7.4,7.4l0,14.7l14.7,0
+          C42.3,22.1,45.6,18.8,45.6,14.7z"/>
+        </g>
+        <polygon points="20.7,39.7 20.7,24.9 6,24.9 6,20.7 20.7,20.7 20.7,6 24.9,6 24.9,20.7 39.7,20.7 39.7,24.9 24.9,24.9 24.9,39.7 "/>
+      </svg>
+    </nav>
+
+    <article id="about">
+      <p>
+        We believe in souls. We believe in soul mates. Our photos
+        aim to capture people at their best and their worst -
+        when there&rsquo;s nothing left to be said and it's all out on
+        the table. Our perfect shot is not about lighting. It&rsquo;s
+        not about poses. It&rsquo;s about you. We want to get to know
+        you so that we can capture the moments you&rsquo;ll cherish
+        forever.
+      </p>
+
+      <p>
+        When we shoot your event, you&rsquo;ll receive about 300 high
+        resolution photographs, minimally retouched. We&rsquo;ll also
+        leave you with a package of roughly 30 unique prints.
+        We may use some of our favorite shots for our website,
+        with your permission of course.
+      </p>
+
+      <p>
+        Our signature photo captures the emotion and the spirit of
+        your event.
+      </p>
+
+      <p>
+        Stay out of the deep end,<br>
+        <a href="http://naziragah.com">Nazir Agah</a> &amp;
+        <a href="http://avandamiri.com">Avand Amiri</a>
+      </p>
+
+      <div style="text-align: center; margin: 1em 0; padding-top: 1em;">
+        <img src="images/the-irish-goodbye.svg" alt="The Irish Goodbye" style="width: 25%; margin: 0 auto;">
+      </div>
+
+      <!--p>Nothing about us is standard, except for the standard that we set.</p-->
+    </article>
 
     <div id="slideshow-container">
       <div id="slideshow" class="transparent">
@@ -51,6 +104,12 @@
 
     <script>
      (function() { TheIrishGoodbye.hello() })()
+    </script>
+
+    <script>
+    document.querySelector("svg").addEventListener("click", function(e) {
+      document.querySelector("svg").classList.toggle("rotate");
+    })
     </script>
   </body>
 </html>
