@@ -87,37 +87,3 @@ var Slideshow = {
     this.start();
   }
 };
-
-var About = {
-  animationEnd: function(event) {
-    switch (event.target.className) {
-      case "out":
-        event.target.removeAttribute("class");
-        break;
-    }
-  },
-
-  show: function(event) {
-    Slideshow.stop();
-
-    event.target.style.display = "none";
-    document.getElementById("about-close").style.display = "inline-block";
-
-    document.getElementsByClassName("slide-current")[0].className = "slide slide-current blur";
-    document.getElementById("about").className = "in";
-
-    about.addEventListener("webkitAnimationEnd", About.animationEnd);
-  },
-
-  hide: function(event) {
-    Slideshow.start();
-
-    event.target.style.display = "none";
-    document.getElementById("about-btn").style.display = "inline-block";
-
-    document.getElementsByClassName("slide-current")[0].className = "slide slide-current focus";
-
-    var about = document.getElementById("about");
-    about.className = "out";
-  }
-};

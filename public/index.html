@@ -21,8 +21,6 @@
         <h1>The Irish Goodbye</h1>
 
         <nav>
-          <a href="#" class="btn" id="about-btn" style="display: none;">About</a>
-          <a href="#" class="btn" id="about-close" style="display: none">Close</a>
         </nav>
       </header>
 
@@ -85,8 +83,6 @@
     </div>
 
     <script>
-      Hammer(document.getElementById("about-btn")).on("tap", About.show);
-      Hammer(document.getElementById("about-close")).on("tap", About.hide);
       Hammer(document.getElementsByTagName("body")[0]).on("tap", Slideshow.advanceSlide);
 
       Slideshow.init();
