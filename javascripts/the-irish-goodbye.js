@@ -4,7 +4,7 @@ window.TheIrishGoodbye = {
 
     Slideshow.init();
 
-    setTimeout(function() { document.querySelector("#slideshow").classList.remove("transparent") }, 400);
+    setTimeout(function() { document.querySelector("#slideshow-avid-hailey").classList.remove("transparent") }, 400);
 
     document.querySelector("nav").addEventListener("click", About.toggle);
 

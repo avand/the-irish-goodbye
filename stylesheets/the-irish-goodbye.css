@@ -82,7 +82,7 @@ article.out {
   bottom: 0;
   left: 0;
 }
-#slideshow {
+.slideshow {
   height: 100%;
   position: relative;
   -webkit-transition: opacity 900ms;
