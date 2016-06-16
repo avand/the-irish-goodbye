@@ -1,0 +1,34 @@
+#clover {
+  height: 36px;
+  display: block;
+  transition: all 1s;
+  overflow: visible;
+}
+
+#clover polygon,
+#clover path,
+#clover g {
+  transition: all 1s;
+  transform-origin: 50% 50%;
+}
+
+#clover polygon,
+#clover path {
+  fill: #EDEBE8;
+}
+
+#clover polygon {
+  transform: scale(0.0);
+}
+
+#clover.transformed {
+  transform: rotate(135deg);
+}
+
+#clover.transformed g {
+  transform: scale(0);
+}
+
+#clover.transformed polygon {
+  transform: scale(1);
+}

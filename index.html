@@ -8,12 +8,18 @@
     <link href="http://fonts.googleapis.com/css?family=Podkova" rel="stylesheet" type="text/css">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="/stylesheets/the-irish-goodbye.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/the-irish-goodbye.css" type="text/css" rel="stylesheet" media="all">
 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
-    <script type="text/javascript" src="/javascripts/slideshow.js"></script>
-    <script type="text/javascript" src="/javascripts/about.js"></script>
-    <script type="text/javascript" src="/javascripts/the-irish-goodbye.js"></script>
+    <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+
+    <script type="text/javascript" src="js/data/albums.js"></script>
+
+    <script type="text/javascript" src="js/slideshow.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/tracking.js"></script>
+    <script type="text/javascript" src="js/the-irish-goodbye.js"></script>
 
     <meta property="og:url" content="http://irishgoodbyesf.com">
     <meta property="og:title" content="The Irish Goodbye">
@@ -26,7 +32,7 @@
   </head>
   <body>
     <nav>
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <svg id="clover" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="0 0 45.6 45.6" xml:space="preserve">
         <g>
           <path d="M14.7,0c-4.1,0-7.4,3.3-7.4,7.4C3.3,7.4,0,10.7,0,14.7c0,4.1,3.3,7.4,7.4,7.4l14.7,0l0-14.7C22.1,3.3,18.8,0,14.7,0z"/>
@@ -40,150 +46,50 @@
       </svg>
     </nav>
 
-    <article id="about">
-      <p>
-        We believe in souls. We believe in soul mates. Our photos
-        aim to capture people at their best and their worst -
-        when there&rsquo;s nothing left to be said and it's all out on
-        the table. Our perfect shot is not about lighting. It&rsquo;s
-        not about poses. It&rsquo;s about you. We want to get to know
-        you so that we can capture the moments you&rsquo;ll cherish
-        forever.
-      </p>
+    <main>
+      <div id="content">
+        <div style="text-align: center; margin: 1em 0; padding-top: 1em;">
+          <img src="images/the-irish-goodbye.svg" alt="The Irish Goodbye" style="width: 25%; margin: 0 auto;">
+        </div>
 
-      <p>
-        When we shoot your event, you&rsquo;ll receive about 300 high
-        resolution photographs, minimally retouched. We&rsquo;ll also
-        leave you with a package of roughly 30 unique prints.
-        We may use some of our favorite shots for our website,
-        with your permission of course.
-      </p>
+        <div class="column column-left">
+          <h1>About Us</h1>
 
-      <p>
-        Our signature photo captures the emotion and the spirit of
-        your event.
-      </p>
+          <p>
+            We believe in souls. We believe in soul mates. Our photos
+            aim to capture people at their best and their worst—
+            when there’s nothing left to be said and it’s all out on
+            the table. Our perfect shot is not about lighting. It’s
+            not about poses. It’s about you. It’s about a mood and a
+            feeling—something ethereal that only a camera can capture.
+          </p>
 
-      <p>
-        Stay out of the deep end,<br>
-        <a href="http://naziragah.com">Nazir Agah</a> &amp;
-        <a href="http://avandamiri.com">Avand Amiri</a>
-      </p>
+          <p>
+            Stay out of the deep end,<br>
+            <a href="http://naziragah.com">Nazir Agah</a> &amp;
+            <a href="http://avandamiri.com">Avand Amiri</a>
+          </p>
 
-      <div style="text-align: center; margin: 1em 0; padding-top: 1em;">
-        <img src="images/the-irish-goodbye.svg" alt="The Irish Goodbye" style="width: 25%; margin: 0 auto;">
+          <!--p>Nothing about us is standard, except for the standard that we set.</p-->
+        </div>
+
+        <div class="column column-right">
+          <h1>Albums</h1>
+
+          <ul id="albums">
+          </ul>
+        </div>
       </div>
+    </main>
 
-      <!--p>Nothing about us is standard, except for the standard that we set.</p-->
-    </article>
-
-    <div id="slideshow-container">
-      <div id="slideshow-avid-hailey" class="slideshow transparent">
-        <div class="slide slide-current" style="background-image: url(albums/avid-hailey/01.jpg)"></div>
-        <div class="slide slide-next" style="background-image: url(albums/avid-hailey/02.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/03.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/04.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/05.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/07.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/08.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/09.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/10.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/11.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/12.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/13.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/14.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/15.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/16.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/17.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/18.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/19.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/20.jpg)"></div>
-      </div>
-
-      <div id="slideshow-harrison-megan" class="slideshow transparent">
-        <div class="slide slide-current" style="background-image: url(albums/harrison-megan/01.jpg)"></div>
-        <div class="slide slide-next" style="background-image: url(albums/harrison-megan/02.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/03.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/04.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/05.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/07.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/08.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/09.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/10.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/11.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/12.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/13.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/14.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/15.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/16.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/17.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/18.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/19.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/20.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/21.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/22.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/23.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/harrison-megan/24.jpg)"></div>
-      </div>
-
-      <div id="slideshow-jerry-april" class="slideshow transparent">
-        <div class="slide slide-current" style="background-image: url(albums/jerry-april/01.jpg)"></div>
-        <div class="slide slide-next" style="background-image: url(albums/jerry-april/02.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/03.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/04.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/05.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/07.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/08.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/09.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/10.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/11.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/12.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/13.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/14.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/15.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/16.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/17.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/18.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/19.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/20.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/jerry-april/21.jpg)"></div>
-      </div>
-
-      <div id="slideshow-tim-wendy" class="slideshow transparent">
-        <div class="slide slide-current" style="background-image: url(albums/tim-wendy/01-m-s-hay-babe.jpg)"></div>
-        <div class="slide slide-next" style="background-image: url(albums/tim-wendy/02-hay-baby.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/03-don-the-vail.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/04-forever-is-now.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/05-laugh-from-the-heart.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/06-ha-babe.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/07-kiss-and-breathe.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/08-my-number-one.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/09-lens-flare.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/10-uphill-from-here.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/11-love-you-mom.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/12-wendy-and-mom.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/13-sunny-vail.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/14-canopei.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/15-picture-in-picture.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/16-crystal-clearing.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/17-triangle-of-tweed.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/18-hay-you.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/19-look-at-the-camera.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/20-pei-pie.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/21-fedora.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/22-cupcakes.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/tim-wendy/23-hay-babes.jpg)"></div>
-      </div>
+    <div id="slideshow" class="transparent">
     </div>
 
     <script>
-     (function() { TheIrishGoodbye.hello() })()
+      $(function() { TheIrishGoodbye.hello() })
     </script>
 
     <script>
-    document.querySelector("svg").addEventListener("click", function(e) {
-      document.querySelector("svg").classList.toggle("rotate");
-    })
     </script>
   </body>
 </html>
