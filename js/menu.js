@@ -1,37 +1,56 @@
 var Menu = {
   main: null,
+  clover: null,
+  isHidden: true,
 
   show: function(event) {
+    this.clover.addClass("transformed");
+
     Slideshow.stop();
-    $(".slide-current").addClass("blur").removeClass("focus")
-    Menu.main.addClass("in").removeClass("out");
+    Slideshow.container.addClass("blur").removeClass("focus")
+
+    animate(this.main.show(), "fade-in", {
+      duration: 1100,
+      timingFunction: "ease-out",
+      fillMode: "forwards"
+    }, (function() { this.isHidden = false; }).bind(this))
   },
 
   hide: function(event) {
-    Slideshow.startFromBeginning();
-    $(".slide-current").addClass("focus").removeClass("blur")
-    Menu.main.addClass("out").removeClass("in");
+    this.clover.removeClass("transformed");
+
+    Slideshow.start();
+    Slideshow.container.addClass("focus").removeClass("blur")
+
+    animate(this.main, "fade-out", {
+      duration: 600,
+      timingFunction: "ease-out",
+      fillMode: "forwards"
+    }, (function(e) { e.hide(); this.isHidden = true; }).bind(this))
   },
 
   toggle: function(event) {
-    $(".slide-current").hasClass("blur") ? Menu.hide() : Menu.show();
+    this.isHidden ? this.show() : this.hide();
+  },
+
+  albums: function() {
+    return data.albums.sort(function(a, b) { return b.order - a.order; })
+  },
+
+  listAlbum: function(album) {
+    $("<a>")
+      .attr("href", "#" + album.id)
+      .click(this.hide)
+      .text(album.name)
+      .appendTo($("<li>").appendTo("#albums"));
   },
 
   init: function() {
     this.main = $("main");
+    this.clover = $("#clover");
 
-    $("nav").click(Menu.toggle);
+    $("nav").click(this.toggle.bind(this));
 
-    $("#clover").click(function() {
-      $(this).toggleClass("transformed");
-    });
-
-    Albums.forEach(function(album) {
-      $("<a>")
-        .attr("href", "#" + album.id)
-        .click(Menu.hide)
-        .text(album.name)
-        .appendTo($("<li>").appendTo("#albums"));
-    });
+    this.albums().forEach(this.listAlbum.bind(this));
   }
 };

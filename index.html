@@ -16,6 +16,8 @@
 
     <script type="text/javascript" src="js/data/albums.js"></script>
 
+    <script type="text/javascript" src="js/utils/animation.js"></script>
+    
     <script type="text/javascript" src="js/slideshow.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script type="text/javascript" src="js/tracking.js"></script>
@@ -46,22 +48,27 @@
       </svg>
     </nav>
 
-    <main>
-      <div id="content">
-        <div style="text-align: center; margin: 1em 0; padding-top: 1em;">
-          <img src="images/the-irish-goodbye.svg" alt="The Irish Goodbye" style="width: 25%; margin: 0 auto;">
+    <main style="display: none;">
+      <section>
+        <div style="padding-right: 45%; text-align: center; ">
+          <img src="images/the-irish-goodbye.svg" alt="The Irish Goodbye" id="logo">
         </div>
 
-        <div class="column column-left">
-          <h1>About Us</h1>
+        <article>
+          <h1>Who are we?</h1>
 
           <p>
             We believe in souls. We believe in soul mates. Our photos
-            aim to capture people at their best and their worst—
-            when there’s nothing left to be said and it’s all out on
-            the table. Our perfect shot is not about lighting. It’s
-            not about poses. It’s about you. It’s about a mood and a
-            feeling—something ethereal that only a camera can capture.
+            aim to capture people at their best and their worst—when
+            there’s nothing left to be said and it’s all out on
+            the table.
+          </p>
+
+          <p>
+            The Irish Goodbye means “there’s no hard feelings.”
+            It’s not “goodbye”, it’s ”see you later.” It’s a reminder
+            that there’s no rush—we’re all on the same ride, wherever
+            it might be going. Slow down, look around, and be grateful.
           </p>
 
           <p>
@@ -69,27 +76,22 @@
             <a href="http://naziragah.com">Nazir Agah</a> &amp;
             <a href="http://avandamiri.com">Avand Amiri</a>
           </p>
+        </article>
 
-          <!--p>Nothing about us is standard, except for the standard that we set.</p-->
-        </div>
-
-        <div class="column column-right">
+        <aside>
           <h1>Albums</h1>
 
           <ul id="albums">
           </ul>
-        </div>
-      </div>
+        </aside>
+      </section>
     </main>
 
-    <div id="slideshow" class="transparent">
+    <div id="slideshow">
     </div>
 
     <script>
       $(function() { TheIrishGoodbye.hello() })
-    </script>
-
-    <script>
     </script>
   </body>
 </html>

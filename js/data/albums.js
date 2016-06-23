@@ -1,23 +1,29 @@
-window.Albums = [
+window.data = window.data || {};
+
+window.data.albums = [
   {
     id: "avid-hailey",
-    name: "Avid & Hailey’s Wedding",
-    numberOfPhotos: 20
+    name: "Avid & Hailey",
+    numberOfPhotos: 3,
+    order: 4
   },
   {
     id: "harry-megan",
-    name: "Harrison & Megan’s Wedding",
-    numberOfPhotos: 24
+    name: "Harrison & Megan",
+    numberOfPhotos: 24,
+    order: 2
   },
   {
     id: "jerry-april",
-    name: "Jerry & April’s Wedding",
-    numberOfPhotos: 20
+    name: "Jerry & April",
+    numberOfPhotos: 20,
+    order: 3
   },
   {
     id: "tim-wendy",
-    name: "Tim & Wendy’s Wedding",
+    name: "Tim & Wendy",
     numberOfPhotos: 23,
+    order: 1,
     photoTitles: [
       "m-s-hay-babe",
       "hay-baby",

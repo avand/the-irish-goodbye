@@ -1,157 +1,112 @@
-function attachAnimationEndCallback(obj, method, callback) {
-  var events = ["animationend", "webkitAnimationEnd", "MSAnimationEnd", "oAnimationEnd"];
-
-  for (var i = 0; i < events.length; i++) {
-    obj[method](events[i], callback)
-  }
-};
-
-window.getCleanHash = function() {
-  // TODO: Verify that the hash is a valid album
-  return window.location.hash.replace("#", "");
-};
-
 var Slideshow = {
   intervalID: null,
   container: null,
+  fadeDuration: 3000,
+  slideDuration: 5200,
+  animationDuration: 900,
+  animationTimingFunction: "cubic-bezier(.7, 0, .4, .8)",
+  progressBar: null,
 
-  currentAlbum: (function() {
-    var hash = getCleanHash();
-    return hash.length == 0 ? "avid-hailey" : hash;
-  })(),
+  getAlbumIDFromURL: function() {
+    // TODO: Verify that the hash is a valid album
+    return window.location.hash.replace("#", "");
+  },
 
   advanceSlide: function() {
     var currentSlide = $(".slide-current");
     var nextSlide    = $(".slide-next");
 
-    if (!nextSlide) return;
+    animate(currentSlide, "fly-out", {
+      fillMode: "forwards",
+      timingFunction: this.animationTimingFunction,
+      duration: this.animationDuration
+    }, function() {
+      var newNextSlide = nextSlide.next();
 
-    var oneAfterNextSlide = nextSlide.next() || $(".slide:first-child");
+      // Wrap around to the beginning
+      if (newNextSlide.length == 0) newNextSlide = $(".slide:first-child")
 
-    function animationEnded(event) {
-      oneAfterNextSlide.addClass("slide-next");
-      $(event.target).removeClass("slide-previous");
-
-      attachAnimationEndCallback(currentSlide, "off", animationEnded);
-    }
-
-    attachAnimationEndCallback(currentSlide, "on", animationEnded);
-
-    nextSlide.addClass("slide-current").removeClass("slide-next");
-
-    currentSlide.addClass("slide-previous").removeClass("slide-current")
-  },
-
-  returnSlide: function() {
-    var currentSlide = $(".slide-current");
-    var nextSlide    = $(".slide-next");
-
-    if (!nextSlide) return;
-
-    var previousSlide = currentSlide.prev() || $(".slide:last-child");
-
-    function animationEnded(event) {
-      currentSlide.addClass("slide-next").removeClass("slide-current");
-
-      $(event.target)
-        .addClass("slide-current")
-        .removeClass("slide-previous")
-        .removeClass("reversed");
-
-      nextSlide.removeClass("slide-next");
-
-      attachAnimationEndCallback(previousSlide, "removeEventListener", animationEnded);
-    }
-
-    attachAnimationEndCallback(previousSlide, "addEventListener", animationEnded);
-
-    nextSlide.removeClass("slide-next");
-    previousSlide.addClass("reversed").addClass("slide-previous");
+      currentSlide.removeClass("slide-current");
+      nextSlide.removeClass("slide-next").addClass("slide-current");
+      newNextSlide.addClass("slide-next");
+    })
   },
 
   start: function() {
-    this.intervalID = setInterval(this.advanceSlide, 5200);
+    if (this.intervalID) return;
+
+    this.intervalID = setInterval(() => {
+      this.advanceSlide();
+    }, this.slideDuration);
   },
 
-  startFromBeginning: function() {
+  rewind: function() {
     $(".slide-current").removeClass("slide-current");
     $(".slide-next").removeClass("slide-next");
-    $(".slide-previous").removeClass("slide-previous");
 
-    Slideshow.container
-      .removeClass("transparent")
-      .find(".slide:first").addClass("slide-current")
+    this.container.find(".slide:first").addClass("slide-current")
       .next().addClass("slide-next");
-
-    Slideshow.start();
-    //
-    // // this.stop();
-    // this.container.find(".slide:first").addClass("")
   },
 
   stop: function() {
     clearInterval(this.intervalID);
-  },
-
-  handleKeydown: function(event) {
-    if (event.which == 37 || event.which == 39) {
-      if (this.intervalID) { this.stop(); this.start(); }
-
-      event.which == 37 ? this.returnSlide() : this.advanceSlide();
-    }
-  },
-
-  bindKeyboardControls: function() {
-    document.addEventListener("keydown", this.handleKeydown.bind(this))
+    this.intervalID = null;
   },
 
   changeAlbum: function() {
-    var transitionDuration = Slideshow.container.css("transition-duration");
+    this.stop();
+
+    this.fadeOut(this.buildAlbum.bind(this));
+
+    var transitionDuration = this.container.css("transition-duration");
     var delay = parseInt(transitionDuration) * 1000;
-
-    Slideshow.container
-      .data("initial-transition-duration", transitionDuration)
-      .css("transition-duration", Math.round(delay / 10) + "ms")
-      .addClass("transparent");
-
-    setTimeout(function() {
-      Slideshow.container.empty()
-      Slideshow.currentAlbum = getCleanHash();
-      Slideshow.buildAlbum()
-    }, delay / 5);
   },
 
   buildAlbum: function() {
-    Albums.forEach(function(album) {
-      if (album.id == Slideshow.currentAlbum) {
+    this.container.empty();
+
+    var currentAlbumID = this.getAlbumIDFromURL();
+
+    data.albums.forEach((function(album) {
+      if (album.id == currentAlbumID) {
         for (var i = 1; i <= album.numberOfPhotos; i++) {
           $("<div>")
             .addClass("slide")
-            .css({
-              backgroundImage: "url(albums/" + album.id + "/" + i + ".jpg)"
-            })
-            .appendTo("#slideshow")
+            .css("background-image", `url(albums/${album.id}/${i}.jpg)`)
+            .appendTo(this.container)
         }
       }
-    });
+    }).bind(this));
+
+    this.container
+      .find(".slide:first").addClass("slide-current")
+      .next().addClass("slide-next");
 
     // TODO: Wire up error states and progress
-    Slideshow.container
+    this.container
       .imagesLoaded({ background: ".slide" })
-      .done( function( instance ) {
-        Slideshow.startFromBeginning();
+      .done(() => { this.fadeIn(); this.start(); });
+  },
 
-        var transitionDuration = Slideshow.container.data("initial-transition-duration");
-        if (transitionDuration) Slideshow.container.css("transition-duration", transitionDuration)
-      })
+  fadeIn: function(callback) {
+    this.fade(1, callback);
+  },
+
+  fadeOut: function(callback) {
+    this.fade(0, callback);
+  },
+
+  fade: function(opacity, callback) {
+    transition(this.container, { opacity: opacity }, {
+      duration: this.fadeDuration
+    }, callback)
   },
 
   init: function() {
-    this.container = $("#slideshow");
+    this.container = $("#slideshow").css("opacity", 0);
+    this.progressBar = $("#slideshow-progress-bar");
 
-    this.bindKeyboardControls();
-
-    window.addEventListener("hashchange", this.changeAlbum);
+    window.addEventListener("hashchange", this.changeAlbum.bind(this));
 
     this.buildAlbum();
   }
