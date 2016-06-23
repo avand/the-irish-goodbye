@@ -36,7 +36,7 @@ var Menu = {
   listAlbum: function(album) {
     $("<a>")
       .attr("href", "#" + album.id)
-      .click(this.hide)
+      .click(this.hide.bind(this))
       .text(album.name)
       .appendTo($("<li>").appendTo("#albums"));
   },
