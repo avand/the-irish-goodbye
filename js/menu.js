@@ -33,10 +33,6 @@ var Menu = {
     this.isHidden ? this.show() : this.hide();
   },
 
-  albums: function() {
-    return data.albums.sort(function(a, b) { return b.order - a.order; })
-  },
-
   listAlbum: function(album) {
     $("<a>")
       .attr("href", "#" + album.id)
@@ -51,6 +47,6 @@ var Menu = {
 
     $("nav").click(this.toggle.bind(this));
 
-    this.albums().forEach(this.listAlbum.bind(this));
+    data.albums.forEach(this.listAlbum.bind(this));
   }
 };

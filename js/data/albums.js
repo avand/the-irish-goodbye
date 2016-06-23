@@ -50,4 +50,4 @@ window.data.albums = [
       "hay-babes"
     ]
   }
-]
+].sort(function(a, b) { return b.order - a.order; });

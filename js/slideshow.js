@@ -9,7 +9,8 @@ var Slideshow = {
 
   getAlbumIDFromURL: function() {
     // TODO: Verify that the hash is a valid album
-    return window.location.hash.replace("#", "");
+    hash = window.location.hash.replace("#", "");
+    return hash.length == 0 ? null : hash;
   },
 
   advanceSlide: function() {
@@ -65,10 +66,12 @@ var Slideshow = {
   buildAlbum: function() {
     this.container.empty();
 
-    var currentAlbumID = this.getAlbumIDFromURL();
+    var currentAlbumID = this.getAlbumIDFromURL() || data.albums[0].id;
 
     data.albums.forEach((function(album) {
       if (album.id == currentAlbumID) {
+        $("title").text(`${album.name} - The Irish Goodbye`);
+
         for (var i = 1; i <= album.numberOfPhotos; i++) {
           $("<div>")
             .addClass("slide")
