@@ -1,12 +1,5 @@
-window.TheIrishGoodbye = {
-  hello: function() {
-    Hammer(document.getElementsByTagName("body")[0]).on("tap", Slideshow.advanceSlide);
-
-    Slideshow.init();
-
-    setTimeout(function() { document.querySelector("#slideshow").classList.remove("transparent") }, 400);
-    setTimeout(function() { document.querySelector("header").classList.remove("transparent") }, 1400);
-
+var Tracking = {
+  init: function() {
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
