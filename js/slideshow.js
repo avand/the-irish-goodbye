@@ -36,9 +36,8 @@ var Slideshow = {
   start: function() {
     if (this.intervalID) return;
 
-    this.intervalID = setInterval(() => {
-      this.advanceSlide();
-    }, this.slideDuration);
+    this.intervalID = setInterval(this.advanceSlide.bind(this),
+      this.slideDuration);
   },
 
   rewind: function() {
@@ -88,7 +87,7 @@ var Slideshow = {
     // TODO: Wire up error states and progress
     this.container
       .imagesLoaded({ background: ".slide" })
-      .done(() => { this.fadeIn(); this.start(); });
+      .done((function() { this.fadeIn(); this.start(); }).bind(this));
   },
 
   fadeIn: function(callback) {
