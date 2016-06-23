@@ -5,7 +5,6 @@ var Slideshow = {
   slideDuration: 5200,
   animationDuration: 900,
   animationTimingFunction: "cubic-bezier(.7, 0, .4, .8)",
-  progressBar: null,
 
   getAlbumIDFromURL: function() {
     // TODO: Verify that the hash is a valid album
@@ -106,7 +105,6 @@ var Slideshow = {
 
   init: function() {
     this.container = $("#slideshow").css("opacity", 0);
-    this.progressBar = $("#slideshow-progress-bar");
 
     window.addEventListener("hashchange", this.changeAlbum.bind(this));
 
