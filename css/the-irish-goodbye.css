@@ -1,0 +1,30 @@
+@import "components/clover.css";
+@import "components/slideshow.css";
+@import "components/content.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  color: #EDEBE8;
+  font: 18px/1.4em "Podkova", serif;
+  background: black;
+  margin: 0;
+}
+
+.transparent { opacity: 0; }
+
+a,
+a:link,
+a:visited {
+  color: rgba(189, 246, 196, 1.0);
+  text-decoration: none;
+  transition: all 150ms linear;
+  border-bottom: 1px solid rgba(189, 246, 196, .4);
+}
+a:hover,
+a:focus,
+a:active {
+  border-bottom: 1px solid rgba(189, 246, 196, 1);
+}

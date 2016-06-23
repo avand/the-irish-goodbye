@@ -8,12 +8,19 @@
     <link href="http://fonts.googleapis.com/css?family=Podkova" rel="stylesheet" type="text/css">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="/stylesheets/the-irish-goodbye.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/the-irish-goodbye.css" type="text/css" rel="stylesheet" media="all">
 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
-    <script type="text/javascript" src="/javascripts/slideshow.js"></script>
-    <script type="text/javascript" src="/javascripts/about.js"></script>
-    <script type="text/javascript" src="/javascripts/the-irish-goodbye.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+
+    <script type="text/javascript" src="js/data/albums.js"></script>
+
+    <script type="text/javascript" src="js/utils/animation.js"></script>
+
+    <script type="text/javascript" src="js/slideshow.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/tracking.js"></script>
+    <script type="text/javascript" src="js/the-irish-goodbye.js"></script>
 
     <meta property="og:url" content="http://irishgoodbyesf.com">
     <meta property="og:title" content="The Irish Goodbye">
@@ -26,7 +33,7 @@
   </head>
   <body>
     <nav>
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <svg id="clover" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="0 0 45.6 45.6" xml:space="preserve">
         <g>
           <path d="M14.7,0c-4.1,0-7.4,3.3-7.4,7.4C3.3,7.4,0,10.7,0,14.7c0,4.1,3.3,7.4,7.4,7.4l14.7,0l0-14.7C22.1,3.3,18.8,0,14.7,0z"/>
@@ -40,75 +47,50 @@
       </svg>
     </nav>
 
-    <article id="about">
-      <p>
-        We believe in souls. We believe in soul mates. Our photos
-        aim to capture people at their best and their worst -
-        when there&rsquo;s nothing left to be said and it's all out on
-        the table. Our perfect shot is not about lighting. It&rsquo;s
-        not about poses. It&rsquo;s about you. We want to get to know
-        you so that we can capture the moments you&rsquo;ll cherish
-        forever.
-      </p>
+    <main style="display: none;">
+      <section>
+        <div style="padding-right: 45%; text-align: center; ">
+          <img src="images/the-irish-goodbye.svg" alt="The Irish Goodbye" id="logo">
+        </div>
 
-      <p>
-        When we shoot your event, you&rsquo;ll receive about 300 high
-        resolution photographs, minimally retouched. We&rsquo;ll also
-        leave you with a package of roughly 30 unique prints.
-        We may use some of our favorite shots for our website,
-        with your permission of course.
-      </p>
+        <article>
+          <h1>Who are we?</h1>
 
-      <p>
-        Our signature photo captures the emotion and the spirit of
-        your event.
-      </p>
+          <p>
+            We believe in souls. We believe in soul mates. Our photos
+            aim to capture people at their best and their worst—when
+            there’s nothing left to be said and it’s all out on
+            the table.
+          </p>
 
-      <p>
-        Stay out of the deep end,<br>
-        <a href="http://naziragah.com">Nazir Agah</a> &amp;
-        <a href="http://avandamiri.com">Avand Amiri</a>
-      </p>
+          <p>
+            The Irish Goodbye means “there’s no hard feelings.”
+            It’s not “goodbye”, it’s ”see you later.” It’s a reminder
+            that there’s no rush—we’re all on the same ride, wherever
+            it might be going. Slow down, look around, and be grateful.
+          </p>
 
-      <div style="text-align: center; margin: 1em 0; padding-top: 1em;">
-        <img src="images/the-irish-goodbye.svg" alt="The Irish Goodbye" style="width: 25%; margin: 0 auto;">
-      </div>
+          <p>
+            Stay out of the deep end,<br>
+            <a href="http://naziragah.com">Nazir Agah</a> &amp;
+            <a href="http://avandamiri.com">Avand Amiri</a>
+          </p>
+        </article>
 
-      <!--p>Nothing about us is standard, except for the standard that we set.</p-->
-    </article>
+        <aside>
+          <h1>Albums</h1>
 
-    <div id="slideshow-container">
-      <div id="slideshow" class="transparent">
-        <div class="slide slide-current" style="background-image: url(albums/avid-hailey/photos/01.jpg)"></div>
-        <div class="slide slide-next" style="background-image: url(albums/avid-hailey/photos/02.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/03.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/04.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/05.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/07.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/08.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/09.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/10.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/11.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/12.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/13.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/14.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/15.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/16.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/17.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/18.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/19.jpg)"></div>
-        <div class="slide" style="background-image: url(albums/avid-hailey/photos/20.jpg)"></div>
-      </div>
+          <ul id="albums">
+          </ul>
+        </aside>
+      </section>
+    </main>
+
+    <div id="slideshow">
     </div>
 
     <script>
-     (function() { TheIrishGoodbye.hello() })()
-    </script>
-
-    <script>
-    document.querySelector("svg").addEventListener("click", function(e) {
-      document.querySelector("svg").classList.toggle("rotate");
-    })
+      $(function() { TheIrishGoodbye.hello() })
     </script>
   </body>
 </html>
