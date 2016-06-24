@@ -4,7 +4,7 @@ window.data.albums = [
   {
     id: "avid-hailey",
     name: "Avid & Hailey",
-    numberOfPhotos: 3,
+    numberOfPhotos: 20,
     order: 4
   },
   {
